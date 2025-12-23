@@ -1,5 +1,6 @@
 {
   "gl": {
+    "title": "Essential Information",
     "id": "guidelines",
     "folderPath": "guidelines",
     "files": [
@@ -7,6 +8,7 @@
     ]
   },
   "wa": {
+    "title": "Weekly Member Activity Reports",
     "id": "waReportsList",
     "folderPath": "weekly reports",
     "files": [
@@ -31,6 +33,7 @@
     ]
   },
   "aoc": {
+    "title": "Area of Conquest Activity Reports",
     "id": "aocReportsList",
     "folderPath": "aoc reports",
     "files": [
