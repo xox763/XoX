@@ -19,8 +19,12 @@ jobs:
       
       - name: Generate file list
         run: |
-          cd "weekly reports"
-          find . -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]' > ../files.json
+          # Create JSON object with multiple report categories
+          jq -n \
+            --arg gl "$(cd "guidelines" && find . -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]')" \
+            --arg wa "$(cd "weekly reports" && find . -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]')" \
+            --arg aoc "$(cd "aoc reports" && find . -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]')" \
+            '{guidelines: ($gl | fromjson), waReportsList: ($wa | fromjson), aocReportsList: ($aoc | fromjson)}' > files.json
           
       - name: Commit changes
         run: |

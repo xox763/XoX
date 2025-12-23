@@ -83,18 +83,18 @@
       font-size: 0.9em;
       color: #999;
     }
-    .reports-list li.feedback-record {
+    .reports-list li.feedback-report {
       background-color: #eee1cd;
       border-left: 5px solid #ff9800;
     }
-    .reports-list li.feedback-record:hover {
+    .reports-list li.feedback-report:hover {
       background-color: #ebcfa5;
     }
-    .reports-list li.feedback-record a {
+    .reports-list li.feedback-report a {
       color: #e65100;
       font-weight: bold;
     }
-    .reports-list li.feedback-record a::before {
+    .reports-list li.feedback-report a::before {
       content: "📢 ";
       margin-right: 10px;
     }
@@ -110,7 +110,7 @@
     // Configuration
     const config = {
       folderPath: 'weekly reports/', // subfolder path
-      filePattern: /^(activity|feedback)_(\d{4})(\d{2})(\d{2})_(\d+)days\.html$/, // pattern: activity_YYYYMMDD_Ddays.html or feedback_YYYYMMDD_Ddays.html
+      filePattern: /^(.+)_(\d{4})(\d{2})(\d{2})_(\d+)days\.html$/, // pattern: activity_YYYYMMDD_Ddays.html or feedback_YYYYMMDD_Ddays.html
       sortOrder: 'desc' // 'asc' or 'desc'
     };
     
@@ -120,76 +120,109 @@
     // Extract date from filename
     function extractDate(filename) {
       const match = filename.match(config.filePattern);
-      if (!match) return null;
+      if (!match) return { filename, docType: null, startDate: null, endDate: null };
       
       const [, docType, year, month, day, durationInDays] = match;
       const startDate = new Date(year, month - 1, day);
-      return {
-        filename: filename,
-        docType: docType,
-        startDate,
-        endDate: new Date(startDate.getTime() + (durationInDays - 1) * 86400000),
-      };
+      const endDate = new Date(startDate.getTime() + (durationInDays - 1) * 86400000);
+      return { filename, docType, startDate, endDate };
     }
     
     // Format date for display
     function formatDate(fileObj) {
-      return `${fileObj.startDate.toDateString()} ~ ${fileObj.endDate.toDateString()}`;
+      if (fileObj.startDate && fileObj.endDate)
+        return `${fileObj.startDate.toDateString()} ~ ${fileObj.endDate.toDateString()}`;
+      return 'Unknown Date';
     }
 
     // Process and sort files
-    function processFiles(fileList) {
+    function processFileList(fileList) {
       // Filter files matching the pattern and extract dates
       const processedFiles = fileList
-      .map(extractDate)
-      .filter(item => item !== null);
+        .map(extractDate)
+        .filter(item => item !== null);
       
-      // Sort by date
+      // Sort by startDate, then by docType
       processedFiles.sort((a, b) => {
         const order = config.sortOrder === 'desc' ? -1 : 1;
-        return order * (a.date - b.date) || a.docType.localeCompare(b.docType);
+        
+        // startDate comparison (null last)
+        const aDateNull = a.startDate === null;
+        const bDateNull = b.startDate === null;
+        if (aDateNull !== bDateNull) return aDateNull ? 1 : -1;
+        if (!aDateNull) {
+          const dateComp = order * (a.startDate - b.startDate);
+          if (dateComp !== 0) return dateComp;
+        }
+        
+        // docType comparison (null last)
+        const aTypeNull = a.docType === null;
+        const bTypeNull = b.docType === null;
+        if (aTypeNull !== bTypeNull) return aTypeNull ? 1 : -1;
+        if (!aTypeNull) return a.docType.localeCompare(b.docType);
+        
+        return 0;
       });
-      
+
       return processedFiles;
     }
     
     // Load files from JSON and render
     async function loadAndRenderFiles() {
+      let currentListId = null;
       try {
         const response = await fetch('files.json');
         files = await response.json();
-        renderFileList();
+        for (const [listId, fileList] of Object.entries(files)) {
+          currentListId = listId;
+          try {
+            renderFileList(listId, fileList);
+          } catch (error) {
+            console.error('Error render files:', error);
+            document.getElementById(listId).innerHTML = '<li>Failed to render file list.</li>';
+          }
+        }
       } catch (error) {
         console.error('Error loading files:', error);
-        document.getElementById('weeklyReportsList').innerHTML =
-        '<li>Failed to load file list.</li>';
+        if (currentListId)
+          document.getElementById(currentListId).innerHTML = '<li>Failed to load file list.</li>';
       }
     }
     
     // Render file list
-    function renderFileList() {
-      const listElement = document.getElementById('weeklyReportsList');
-      const sortedFiles = processFiles(files);
+    function renderFileList(listId, fileList) {
+      const listElement = document.getElementById(listId);
+      if (!listElement) {
+        console.error(`Element with ID ${listId} not found.`);
+        return;
+      }
+      const processedFiles = processFileList(fileList);
       
-      if (sortedFiles.length === 0) {
+      if (processedFiles.length === 0) {
         listElement.innerHTML = '<li>No items found.</li>';
         return;
       }
 
       listElement.replaceChildren();
-      sortedFiles.forEach(fileObj => {
+      processedFiles.forEach(fileObj => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         
         a.href = config.folderPath + fileObj.filename;
         if (fileObj.docType === 'feedback') {
-          li.classList.add('feedback-record');
-          a.innerHTML = `Feedback Record: <span class="date">${formatDate(fileObj)}</span>`;
+          li.classList.add('feedback-report');
+          a.innerHTML = `Feedback Report: <span class="date">${formatDate(fileObj)}</span>`;
+        } else if (fileObj.docType === 'activity') {
+          li.classList.add('activity-report');
+          a.innerHTML = `Activity Report: <span class="date">${formatDate(fileObj)}</span>`;
         } else {
-          li.classList.add('weekly-report');
-          a.innerHTML = `Weekly Report: <span class="date">${formatDate(fileObj)}</span>`;
+          // file name decoration for unknown types
+          // remove .html extension for cleaner display
+          // replace underscores with spaces
+          const displayName = fileObj.filename.replace('.html', '').replace(/_/g, ' ');
+          a.textContent = displayName;
         }
-        
+
         li.appendChild(a);
         listElement.appendChild(li);
       });
@@ -207,46 +240,24 @@
     
     <h2 class="section-title">Essential Information</h2>
     <div class="guidelines">
-      <p>Access the core documents and rules for the XoX Guild here:</p>
-      <ul>
-        <li><a href="guidelines/XoX%20Guild%20Welcome%20&%20Rules.html">XoX Guild Welcome & Rules</a></li>
-      </ul>
+      <p>Access the core documents and rules for the Guild here:</p>
+      <ul id="guidelines"></ul>
     </div>
     
     <h2 class="section-title">Weekly Member Activity Reports</h2>
-    <p>Click on the links below to view detailed statistical tables for guild member activity each week.</p>
-    
-    <ul class="reports-list" id="weeklyReportsList">
-      <li><a href="weekly%20reports/activity_20251208_7days.html">Weekly Report: 2025-12-08 ~ 2025-12-14</a></li>
-      <li class="feedback-record"><a href="weekly%20reports/feedback_20251208_7days.html">Feedback Record: 2025-12-08 ~ 2025-12-14</a></li>
-      <li><a href="weekly%20reports/activity_20251201_7days.html">Weekly Report: 2025-12-01 ~ 2025-12-07</a></li>
-      <li class="feedback-record"><a href="weekly%20reports/feedback_20251201_7days.html">Feedback Record: 2025-12-01 ~ 2025-12-07</a></li>
-      <li><a href="weekly%20reports/activity_20251124_7days.html">Weekly Report: 2025-11-24 ~ 2025-11-30</a></li>
-      <li><a href="weekly%20reports/activity_20251117_7days.html">Weekly Report: 2025-11-17 ~ 2025-11-23</a></li>
-      <li><a href="weekly%20reports/activity_20251110_7days.html">Weekly Report: 2025-11-10 ~ 2025-11-16</a></li>
-      <li><a href="weekly%20reports/activity_20251103_7days.html">Weekly Report: 2025-11-03 ~ 2025-11-09</a></li>
-      <li><a href="weekly%20reports/activity_20251027_7days.html">Weekly Report: 2025-10-27 ~ 2025-11-02</a></li>
-      <li><a href="weekly%20reports/activity_20251020_7days.html">Weekly Report: 2025-10-20 ~ 2025-10-26</a></li>
-      <li><a href="weekly%20reports/activity_20251013_7days.html">Weekly Report: 2025-10-13 ~ 2025-10-19</a></li>
-      <li><a href="weekly%20reports/activity_20251006_7days.html">Weekly Report: 2025-10-06 ~ 2025-10-12</a></li>
-      <li><a href="weekly%20reports/activity_20250929_7days.html">Weekly Report: 2025-09-29 ~ 2025-10-05</a></li>
-      <li><a href="weekly%20reports/activity_20250922_7days.html">Weekly Report: 2025-09-22 ~ 2025-09-28</a></li>
-      <li><a href="weekly%20reports/activity_20250915_7days.html">Weekly Report: 2025-09-15 ~ 2025-09-21</a></li>
-      <li><a href="weekly%20reports/activity_20250908_7days.html">Weekly Report: 2025-09-08 ~ 2025-09-14</a></li>
-      <li><a href="weekly%20reports/activity_20250901_7days.html">Weekly Report: 2025-09-01 ~ 2025-09-07</a></li>
-      <li><a href="weekly%20reports/activity_20250825_7days.html">Weekly Report: 2025-08-25 ~ 2025-08-31</a></li>
-    </ul>
+    <div class="wa-reports">
+      <p>Click on the links below to view detailed statistical tables for guild member activity each week.</p>
+      <ul class="reports-list" id="waReportsList"></ul>
+    </div>
     
     <h2 class="section-title">Other Reports (e.g., AoC Data)</h2>
     <div class="aoc-reports">
-      <p>Access specialized or temporary activity logs:</p>
-      <ul>
-        <li><a href="aoc%20reports/activity_20251210_4days.html">Area of Conquest Activity Data (2025-12-10, 4 days)</a></li>
-      </ul>
+      <p>Access Area of Conquest activity logs:</p>
+      <ul class="reports-list" id="aocReportsList"></ul>
     </div>
-    
+
     <footer>
-      <p>Powered by GitHub Pages and Codespaces | XoX Guild Server 469</p>
+      <p>Made by Ihg</p>
     </footer>
   </div>
 </body>
