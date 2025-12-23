@@ -87,10 +87,6 @@
       background-color: #eee1cd;
       border-left: 5px solid #ff9800;
     }
-    .reports-list li.feedback-record {
-      background-color: #eee1cd;
-      border-left: 5px solid #ff9800;
-    }
     .reports-list li.feedback-record:hover {
       background-color: #ebcfa5;
     }
@@ -102,8 +98,9 @@
       content: "📢 ";
       margin-right: 10px;
     }
-    .reports-list li a::before {
-      content: "📅 ";
+    .date {
+      font-weight: normal;
+      color: #555;
     }
   </style>
 </head>
@@ -113,7 +110,7 @@
     // Configuration
     const config = {
       folderPath: 'weekly reports/', // subfolder path
-      filePattern: /^(activity|feedback)_(\d{4})(\d{2})(\d{2})_(?:\d+)days\.html$/, // pattern: activity_YYYYMMDD_Ddays.html or feedback_YYYYMMDD_Ddays.html
+      filePattern: /^(activity|feedback)_(\d{4})(\d{2})(\d{2})_(\d+)days\.html$/, // pattern: activity_YYYYMMDD_Ddays.html or feedback_YYYYMMDD_Ddays.html
       sortOrder: 'desc' // 'asc' or 'desc'
     };
     
@@ -125,22 +122,21 @@
       const match = filename.match(config.filePattern);
       if (!match) return null;
       
-      const [, docType, year, month, day] = match;
+      const [, docType, year, month, day, durationInDays] = match;
+      const startDate = new Date(year, month - 1, day);
       return {
         filename: filename,
         docType: docType,
-        date: new Date(year, month - 1, day),
-        year: year,
-        month: month,
-        day: day
+        startDate,
+        endDate: new Date(startDate.getTime() + (durationInDays - 1) * 86400000),
       };
     }
     
     // Format date for display
-    function formatDate(dateObj) {
-      return `${dateObj.year}-${dateObj.month}-${dateObj.day}`;
+    function formatDate(fileObj) {
+      return `${fileObj.startDate.toDateString()} ~ ${fileObj.endDate.toDateString()}`;
     }
-    
+
     // Process and sort files
     function processFiles(fileList) {
       // Filter files matching the pattern and extract dates
@@ -186,8 +182,13 @@
         const a = document.createElement('a');
         
         a.href = config.folderPath + fileObj.filename;
-        a.textContent = fileObj.filename;
-        a.innerHTML = `${fileObj.filename} <span class="date">${formatDate(fileObj)}</span>`;
+        if (fileObj.docType === 'feedback') {
+          li.classList.add('feedback-record');
+          a.innerHTML = `Feedback Record: <span class="date">${formatDate(fileObj)}</span>`;
+        } else {
+          li.classList.add('weekly-report');
+          a.innerHTML = `Weekly Report: <span class="date">${formatDate(fileObj)}</span>`;
+        }
         
         li.appendChild(a);
         listElement.appendChild(li);
