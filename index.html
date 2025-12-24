@@ -172,10 +172,10 @@
       try {
         const response = await fetch('files.json');
         files = await response.json();
-        for (const {id: listId, folderPath, files: fileList} of Object.values(files)) {
+        for (const [category, {id: listId, folderPath, files: fileList}] of Object.entries(files)) {
           currentListId = listId;
           try {
-            renderFileList(listId, fileList, folderPath);
+            renderFileList(listId, fileList, folderPath, category);
           } catch (error) {
             console.error('Error render files:', error);
             document.getElementById(listId).innerHTML = '<li>Failed to render file list.</li>';
@@ -189,7 +189,7 @@
     }
     
     // Render file list
-    function renderFileList(listId, fileList, folderPath) {
+    function renderFileList(listId, fileList, folderPath, category) {
       const listElement = document.getElementById(listId);
       if (!listElement) {
         console.error(`Element with ID ${listId} not found.`);
@@ -207,7 +207,7 @@
         const li = document.createElement('li');
         const a = document.createElement('a');
         
-        a.href = `${folderPath}\\${fileObj.filename}`;
+        a.href = `report_viewer.html?category=${encodeURIComponent(category)}&name=${encodeURIComponent(fileObj.filename)}`;
         if (fileObj.docType === 'feedback') {
           li.classList.add('feedback-report');
           a.innerHTML = `Feedback Report: <span class="date">${formatDate(fileObj)}</span>`;
