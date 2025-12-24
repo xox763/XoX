@@ -368,7 +368,7 @@
     function loadReport() {
       const selectedReport = reportSelector.value;
       if (!selectedReport) return;
-      const showEval = evaluationToggle.checked ? 'showEvaluation=true' : '';
+      const showEval = evaluationToggle.checked ? 'showEval=true' : '';
       const keyword = searchFilter.value.trim();
       const search = keyword ? `search=${encodeURIComponent(keyword)}` : '';
       const params = [showEval, search].filter(param => param).join('&');
@@ -395,15 +395,23 @@
         documentFrame.contentWindow.location.replace('about:blank');
       }
     });
-    
+
     // Handle evaluation toggle
     evaluationToggle.addEventListener('change', (e) => {
-      loadReport();
+      try {
+        documentFrame.contentWindow.showEvaluation(e.target.checked);
+      } catch (err) {
+        console.error("Access denied or function not found:", err);
+      }
     });
 
     // Handle search filter
     searchFilter.addEventListener('input', (e) => {
-      loadReport();
+      try {
+        documentFrame.contentWindow.applySearchFilter(e.target.value.trim());
+      } catch (err) {
+        console.error("Access denied or function not found:", err);
+      }
     });
 
     // Initialize
