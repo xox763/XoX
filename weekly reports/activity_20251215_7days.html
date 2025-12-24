@@ -293,13 +293,13 @@
           match = true;
         } else if (columnIndex === null) {
           match = [...row.cells].some((cell, idx) => {
-            let value = cell.textContent.trim();
+            let value = cell.textContent;
             if (idx > 0)
               value = parseValue(value);
             return operator(value);
           });
         } else {
-          let value = row.cells[columnIndex];
+          let value = row.cells[columnIndex].textContent;
           if (columnIndex > 0)
             value = parseValue(value);
           match = operator(value);
