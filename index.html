@@ -5,137 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guild Activity Reports</title>
   <style>
+    :root {
+      --primary-color: #2c5282;
+      --primary-light: #4a90c5;
+      --primary-dark: #1a365d;
+      --accent-color: #5a9fd4;
+      --accent-light: #90c9f0;
+      --bg-primary: #f7fafc;
+      --bg-secondary: #edf2f7;
+      --bg-card: #ffffff;
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --text-muted: #5d697b;
+      --border-color: #cbd5e0;
+      --hover-bg: #e6f2ff;
+      --shadow: rgba(45, 55, 72, 0.1);
+    }
+
     body {
-      font-family: Tahoma, Geneva, Verdana, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
     }
+
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 30px;
-      background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+      background-color: var(--bg-card);
+      box-shadow: 0 4px 12px var(--shadow);
+      border-radius: 12px;
     }
+
     header {
       text-align: center;
-      border-bottom: 3px solid #007bff;
-      padding-bottom: 20px;
-      margin-bottom: 30px;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 25px;
+      margin-bottom: 40px;
     }
+
     header h1 {
-      color: #007bff;
+      color: var(--primary-color);
       font-size: 2.5em;
-      margin: 0;
+      margin: 0 0 10px 0;
+      font-weight: 700;
     }
+
     header p {
       font-size: 1.1em;
-      color: #666;
+      color: var(--text-secondary);
+      margin: 0;
     }
+
     .section-title {
-      color: #333;
-      font-size: 1.6em;
-      border-left: 5px solid #007bff;
-      padding-left: 15px;
-      /* margin-top: 40px;
-      margin-bottom: 20px; */
+      background-color: var(--bg-secondary);
+      color: var(--primary-dark);
+      font-size: 1.5em;
+      font-weight: 600;
+      border-left: 5px solid var(--primary-color);
+      padding: 18px 24px;
+      border-radius: 10px;
     }
+
+    .guidelines {
+      background-color: var(--bg-card);
+      /* background-color: var(--bg-secondary); */
+      padding: 20px;
+      border-left: 4px solid var(--accent-color);
+      border-radius: 10px;
+      margin: 20px 20px 20px 20px;
+    }
+
+    .guidelines p {
+      color: var(--text-secondary);
+      margin: 0 0 15px 0;
+    }
+
+    .guidelines ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .guidelines li {
+      padding: 8px 0;
+    }
+
+    .guidelines a {
+      color: var(--primary-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .guidelines a:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    .guidelines a::before {
+      content: "📋 ";
+      margin-right: 8px;
+    }
+
     .reports-list {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
+
     .reports-list li {
-      background-color: #e9e9ff;
+      background-color: var(--bg-secondary);
       margin-bottom: 8px;
-      padding: 12px 15px;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+      padding: 14px 18px;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent-light);
+      transition: all 0.2s;
     }
+
     .reports-list li:hover {
-      background-color: #a1a1e7;
+      background-color: var(--hover-bg);
+      border-left-color: var(--primary-light);
+      transform: translateX(4px);
     }
+
     .reports-list a {
       text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-      display: block;
+      color: var(--text-primary);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
     .reports-list a::before {
       content: "📅 ";
       margin-right: 10px;
     }
-    .guidelines a {
-      color: #28a745;
-      text-decoration: none;
-      font-weight: bold;
+
+    .date {
+      font-weight: normal;
+      color: var(--text-muted);
+      font-size: 0.9em;
     }
-    .guidelines a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 30px 0;
-      border-top: 1px solid #eaeaea;
-      font-size: 0.85em;
-      color: #aaa;
-      letter-spacing: 1px;
-    }
-    footer strong {
-      color: #007bff;
-      font-weight: 600;
-    }
+
     .reports-list li.feedback-report {
-      background-color: #eee1cd;
-      border-left: 5px solid #ff9800;
-    }
-    .reports-list li.feedback-report:hover {
-      background-color: #ebcfa5;
-    }
-    .reports-list li.feedback-report a {
-      color: #e65100;
-      font-weight: bold;
+      border-left: 3px solid #ff9800;
     }
     .reports-list li.feedback-report a::before {
       content: "📢 ";
       margin-right: 10px;
     }
-    .date {
-      font-weight: normal;
-      color: #555;
+
+    .report-section {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    .report-section h3 {
+      font-weight: 600;
+      font-size: 1.15em;
+      color: var(--primary-dark);
+      border-left: 5px solid var(--primary-color);
+      padding-left: 15px;
+      margin-bottom: 20px;
     }
 
     /* Accordion Styling */
     .report-accordion {
-      background-color: #fffbee;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
       margin-bottom: 20px;
       overflow: hidden;
       transition: all 0.3s ease;
     }
 
     .report-accordion summary {
-      padding: 15px 20px;
-      font-weight: bold;
+      padding: 18px 24px;
+      font-weight: 600;
+      font-size: 1.5em;
       cursor: pointer;
-      background-color: #e5ecc6;
-      color: #235;
-      border-left: 5px solid #007bff;
+      background-color: var(--bg-secondary);
+      color: var(--primary-dark);
+      border-left: 5px solid var(--primary-color);
       outline: none;
-      list-style: none; /* Remove default arrow */
+      list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background-color 0.2s;
     }
 
-    /* Custom Arrow Indicator */
     .report-accordion summary::after {
       content: '▶';
       font-size: 0.8em;
+      color: var(--primary-color);
       transition: transform 0.3s;
     }
 
@@ -144,19 +215,65 @@
     }
 
     .report-accordion summary:hover {
-      background-color: #eef6ff;
+      background-color: var(--hover-bg);
     }
 
-    /* Padding for content inside */
     .report-accordion .wa-reports, 
     .report-accordion .aoc-reports {
-      padding: 15px 20px;
-      border-top: 1px solid #eee;
+      padding: 20px;
+      background-color: var(--bg-card);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 0;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9em;
+      color: var(--text-muted);
+    }
+
+    footer strong {
+      color: var(--primary-color);
+      font-weight: 600;
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <header>
+      <h1>Guild Activity Reports</h1>
+      <p>Performance and Contribution Archive</p>
+    </header>
+    
+    <details class="report-accordion" open>
+      <summary>Essential Information</summary>
+      <div class="guidelines">
+        <p>Access the core documents and rules for the Guild here:</p>
+        <ul id="guidelines"></ul>
+      </div>
+    </details>
+    
+    <details class="report-accordion" open>
+      <summary>Weekly Member Activity Reports</summary>
+      <div class="wa-reports">
+        <ul class="reports-list" id="waReportsList"></ul>
+      </div>
+    </details>
+    
+    <details class="report-accordion" open>
+      <summary>Area of Conquest Activity Reports</summary>
+      <div class="aoc-reports">
+        <ul class="reports-list" id="aocReportsList"></ul>
+      </div>
+    </details>
+
+    <footer>
+      <p>Powered by <strong>Ihg</strong> | © 2025 All Rights Reserved</p>
+    </footer>
+  </div>
+
   <script>
     // Load file list from JSON
     let files = [];
@@ -285,36 +402,5 @@
     // Initialize on page load
     window.addEventListener('DOMContentLoaded', loadAndRenderFiles);
   </script>
-
-  <div class="container">
-    <header>
-      <h1>Guild Activity Reports</h1>
-      <p>Performance and Contribution Archive</p>
-    </header>
-    
-    <h2 class="section-title">Essential Information</h2>
-    <div class="guidelines">
-      <p>Access the core documents and rules for the Guild here:</p>
-      <ul id="guidelines"></ul>
-    </div>
-    
-    <details class="report-accordion" open>
-      <summary>Weekly Member Activity Reports</summary>
-      <div class="wa-reports">
-        <ul class="reports-list" id="waReportsList"></ul>
-      </div>
-    </details>
-    
-    <details class="report-accordion" open>
-      <summary>Area of Conquest Activity Reports</summary>
-      <div class="aoc-reports">
-        <ul class="reports-list" id="aocReportsList"></ul>
-      </div>
-    </details>
-
-    <footer>
-      <p>Powered by <strong>Ihg</strong> | © 2025 All Rights Reserved</p>
-    </footer>
-  </div>
 </body>
 </html>
