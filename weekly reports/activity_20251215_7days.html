@@ -172,7 +172,7 @@
       }
     </style>
 </head>
-<body>
+<body data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed="">
   
 
   <script>
@@ -249,7 +249,7 @@
       });
     }
 
-    const searchCommandRegex = /^@(\w*)(<=|>=|<>|<|>|=)([^<>=]*)$/;
+    const searchCommandRegex = /^@(\w*)(<=|>=|<>|<|>|=)([^<>=].*)$/;
 
     function applySearchFilter(keyword) {
       const term = keyword.toLowerCase();
@@ -264,8 +264,15 @@
           if (header === null) return; 
           columnIndex = parseInt(header.dataset.column);
         }
-        const operand = match[3].trim() || null;
-        switch (match[2]) {
+        const operand = match[3].trim();
+        if (!operand) return; 
+        const op = match[2];
+        if (columnIndex > 0) {
+          if (isNaN(operand))
+            return; 
+          operand = parseFloat(operand);
+        }
+        switch (op) {
           case '<=':
             operator = v => v <= operand;
             break;
