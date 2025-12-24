@@ -203,18 +203,22 @@
       }
 
       listElement.replaceChildren();
+      const timestamp = new Date().getTime();
       processedFiles.forEach(fileObj => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         
-        a.href = `report_viewer.html?category=${encodeURIComponent(category)}&name=${encodeURIComponent(fileObj.filename)}`;
+        const href = `report_viewer.html?category=${encodeURIComponent(category)}&name=${encodeURIComponent(fileObj.filename)}&_t=${timestamp}`;
         if (fileObj.docType === 'feedback') {
+          a.href = href;
           li.classList.add('feedback-report');
           a.innerHTML = `Feedback Report: <span class="date">${formatDate(fileObj)}</span>`;
         } else if (fileObj.docType === 'activity') {
+          a.href = href;
           li.classList.add('activity-report');
           a.innerHTML = `Activity Report: <span class="date">${formatDate(fileObj)}</span>`;
         } else {
+          a.href = `${folderPath}\\${fileObj.filename}`;
           // file name decoration for unknown types
           // remove .html extension for cleaner display
           // replace underscores with spaces
