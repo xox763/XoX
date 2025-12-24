@@ -37,12 +37,20 @@
     .controls {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     label {
       font-size: 14px;
       font-weight: 600;
+      white-space: nowrap;
     }
     
     select {
@@ -59,6 +67,72 @@
       outline: 2px solid #3498db;
     }
     
+    /* Toggle Switch */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.3s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #3498db;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    /* Search Input */
+    .search-input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 2px solid #bdc3c7;
+      border-radius: 4px;
+      background-color: white;
+      min-width: 200px;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+
+    .search-input::placeholder {
+      color: #95a5a6;
+    }
+
     .viewer-container {
       flex: 1;
       padding: 20px;
@@ -102,10 +176,30 @@
   <header>
     <h1>Report Viewer</h1>
     <div class="controls">
-      <label for="reportSelector">Select Report:</label>
-      <select id="reportSelector">
-        <option value="">-- Select a report --</option>
-      </select>
+      <div class="control-group">
+        <label for="reportSelector">Select Report:</label>
+        <select id="reportSelector">
+          <option value="">-- Select a report --</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="evaluationToggle">Show Evaluation:</label>
+        <label class="toggle-switch">
+          <input type="checkbox" id="evaluationToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="control-group">
+        <label for="searchFilter">Search:</label>
+        <input 
+          type="text" 
+          id="searchFilter" 
+          class="search-input" 
+          placeholder="Search reports..."
+        >
+      </div>
     </div>
   </header>
   
@@ -126,6 +220,8 @@
     const reportName = urlParams.get('name');
     
     const reportSelector = document.getElementById('reportSelector');
+    const evaluationToggle = document.getElementById('evaluationToggle');
+    const searchFilter = document.getElementById('searchFilter');
     const documentFrame = document.getElementById('documentFrame');
     const noSelection = document.getElementById('noSelection');
     
@@ -269,6 +365,18 @@
       }
     }
 
+    function loadReport() {
+      const selectedReport = reportSelector.value;
+      if (!selectedReport) return;
+      const showEval = evaluationToggle.checked ? 'showEvaluation=true' : '';
+      const keyword = searchFilter.value.trim();
+      const search = keyword ? `search=${encodeURIComponent(keyword)}` : '';
+      const params = [showEval, search].filter(param => param).join('&');
+      const url = params ? `${selectedReport}?${params}` : selectedReport;
+
+      documentFrame.contentWindow.location.replace(url);
+    }
+
     // Handle report selection
     reportSelector.addEventListener('change', (e) => {
       const selectedReport = e.target.value;
@@ -277,21 +385,27 @@
         // Show iframe, hide message
         documentFrame.style.display = 'block';
         noSelection.style.display = 'none';
-        
-        // Load selected report without adding to history stack
-        // documentFrame.src = selectedReport; -- IGNORE --
-        documentFrame.contentWindow.location.replace(selectedReport);
+        loadReport();
       } else {
         // Show message, hide iframe
         documentFrame.style.display = 'none';
         noSelection.style.display = 'flex';
 
         // Reset frame without adding to history stack
-        // documentFrame.src = ''; -- IGNORE --
         documentFrame.contentWindow.location.replace('about:blank');
       }
     });
     
+    // Handle evaluation toggle
+    evaluationToggle.addEventListener('change', (e) => {
+      loadReport();
+    });
+
+    // Handle search filter
+    searchFilter.addEventListener('input', (e) => {
+      loadReport();
+    });
+
     // Initialize
     window.addEventListener('DOMContentLoaded', loadFiles);
   </script>
