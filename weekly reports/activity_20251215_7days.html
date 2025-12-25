@@ -510,10 +510,14 @@
           if (header == null) return; 
           columnIndex = parseInt(header.dataset.column);
         }
-        const operand = match[3].trim();
-        if (!operand) return; 
+
         const op = match[2];
-        if (columnIndex > 0) {
+        let operand = match[3].trim();
+        if (!operand) return; 
+        if (operand === '-') {
+          if (op !== '=' && op !== '<>')
+            operand = 0;
+        } else if (columnIndex > 0) {
           if (isNaN(operand))
             return; 
           operand = parseFloat(operand);
@@ -542,8 +546,7 @@
         if (searchKeyword) {
           if (searchKeyword.startsWith('@')) return; 
           columnIndex = 0;
-          const operand = searchKeyword.toLowerCase();
-          operator = v => v.toLowerCase().includes(operand);
+          operator = v => v.toLowerCase().includes(term);
         }
       }
 
@@ -602,7 +605,7 @@
 
       
       return sortableHeaders.reduce((prev, th) => {
-        const headerName = th.textContent.toLowerCase();
+        const headerName = th.textContent.trim().toLowerCase();
         if (headerName.startsWith(searchTerm)) {
           if (!prev || headerName.length < prev[1].length)
             return [th, headerName];
