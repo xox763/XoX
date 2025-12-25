@@ -188,6 +188,21 @@
       border-bottom-color: #2c3e50;
     }
 
+    .tooltip-section {
+      margin-bottom: 12px;
+    }
+
+    .tooltip-indent {
+      margin-left: 12px;
+      margin-top: 4px;
+    }
+
+    .tooltip-note {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #455a64;
+    }
+
     /* Viewer Container */
     .viewer-container {
       flex: 1;
@@ -257,22 +272,35 @@
         >
         <span class="help-icon" title="">ⓘ</span>
         <div class="help-tooltip">
-          <strong>Search Guide:</strong><br><br>
-          <strong>Basic Search:</strong><br>
-          • Searches the Name field (case-insensitive, partial match)<br><br>
-          <strong>Conditional Search:</strong><br>
-          • Format: <code>@[column][operator][value]</code><br>
-          • Column name can be abbreviated (e.g., "adv" for "Adventure")<br>
-          • Omit column to search all columns<br>
-          • Operators: &lt;=, &gt;=, &lt;, &gt;, =, &lt;&gt;<br>
-          • Logic: &lt;&gt; operator uses AND, others use OR<br>
-          • Note: = and &lt;&gt; operators are case-insensitive and require exact match<br><br>
-          <strong>Examples:</strong><br>
-          • <code>@adv&gt;2</code> - Adventure participation count greater than 2<br>
-          • <code>@=0</code> - Any column equals 0<br>
-          • <code>@=-</code> - Any column with no value (shown as '-')<br>
-          • <code>@&lt;&gt;-</code> - Every column is not empty (no '-' value)<br><br>
-          <em>Note: Currently supports single condition only</em>
+          <div class="tooltip-section">
+            <strong>Basic Search</strong><br>
+            <div class="tooltip-indent">
+              • Searches the Name field (case-insensitive, partial match)<br><br>
+            </div>
+          </div>
+          <div class="tooltip-section">
+            <strong>Conditional Search</strong><br>
+            <div class="tooltip-indent">
+              • Format: <code>@[column]<operator><value></code><br>
+              • Column name can be abbreviated (e.g., "adv" for "Adventure")<br>
+              • Omit column to search all columns<br>
+              • Operators: <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, <code>&lt;&gt;</code><br>
+              • Logic: <code>&lt;&gt;</code> operator uses AND, others use OR<br>
+              • Note: <code>=</code> and <code>&lt;&gt;</code> operators are case-insensitive and require exact match<br><br>
+            </div>
+          </div>
+          <div class="tooltip-section">
+            <strong>Examples</strong><br>
+            <div class="tooltip-indent">
+              • <code>@adv&gt;2</code> - Adventure participation count greater than 2<br>
+              • <code>@=0</code> - Any column equals 0<br>
+              • <code>@=-</code> - Any column with no value (shown as <code>-</code>)<br>
+              • <code>@&lt;&gt;-</code> - Every column is not empty (no <code>-</code> value)<br><br>
+            </div>
+          </div>
+          <div class="tooltip-note">
+            <em>Note: Currently supports single condition only</em>
+          </div>
         </div>
       </div>
     </div>
