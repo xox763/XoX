@@ -170,7 +170,7 @@
       }
     </style>
 </head>
-<body>
+<body data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed="">
   
 
   
@@ -204,7 +204,7 @@
           
             <tr>
               <td>Final Guild Prestige Forecast</td>
-              <td>67</td>
+              <td>64</td>
             </tr>
                 </tbody></table>
     </div>
@@ -597,7 +597,7 @@
       let searchTerm = null;
       if (!isNaN(columnSpec)) {
         searchTerm = columnSpec.toString();
-        header = headers.find(th => 
+        header = sortableHeaders.find(th => 
           th.dataset.column === searchTerm
         );
         if (header) return header;
@@ -696,12 +696,12 @@
           }
         });
       });
-debugger;
+
       const params = loadAndUpdateFormParams(config.viewerParamsName);
-      docParams.showEval ??= params.showEval;
-      docParams.searchKeyword ??= params.searchKeyword;
-      docParams.sortColumn ??= params.sortColumn;
-      docParams.sortOrder ??= params.sortOrder;
+      docParams.showEval ??= params.showEval ?? null;
+      docParams.searchKeyword ??= params.searchKeyword ?? null;
+      docParams.sortColumn ??= params.sortColumn ?? null;
+      docParams.sortOrder ??= params.sortOrder ?? null;
 
       applyViewerParams(docParams);
     });
