@@ -33,7 +33,19 @@
       font-size: 24px;
       margin-bottom: 15px;
     }
-    
+
+    .nav-title { font-size: 1.2rem; font-weight: bold; }
+
+    .home-link { 
+      text-decoration: none; 
+    }
+
+    .home-link:hover {
+      color: #007bff;
+    }
+
+    .separator { color: #ccc; margin: 0 10px; }
+
     .controls {
       display: flex;
       align-items: center;
@@ -261,7 +273,11 @@
 
 <body>
   <header>
-    <h1>Report Viewer</h1>
+    <h1 class="nav-title">
+      <a href="index.html" class="home-link">Home</a> 
+      <span class="separator">|</span> 
+      Report Viewer
+    </h1>
     <div class="controls">
       <div class="control-group">
         <label for="reportSelector">Select Report:</label>
