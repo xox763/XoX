@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # 이 줄 추가!
+  contents: write
 
 jobs:
   generate:
@@ -21,17 +21,37 @@ jobs:
       
       - name: Generate file list
         run: |
-          # Create JSON object with multiple report categories
+          # Function to find files safely and return a JSON array
+          get_files() {
+            local dir="$1"
+            if [ -d "$dir" ]; then
+              # If directory exists, find files and convert to JSON array
+              find "$dir" -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]'
+            else
+              # If directory doesn't exist, return empty JSON array
+              echo "[]"
+            fi
+          }
+
+          # Get file lists for each category
+          GL_FILES=$(get_files "guidelines")
+          WA_FILES=$(get_files "weekly reports")
+          AOC_FILES=$(get_files "aoc reports")
+
+          # Create final JSON using jq
           jq -n \
-            --arg gl "$(cd "guidelines" && find . -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]')" \
-            --arg wa "$(cd "weekly reports" && find . -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]')" \
-            --arg aoc "$(cd "aoc reports" && find . -maxdepth 1 -name "*.html" -type f -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]')" \
-            '{gl: {title: "Essential Information", id: "guidelines", folderPath: "guidelines", files: ($gl | fromjson)}, wa: {title: "Weekly Activity Reports", id: "waReportsList", folderPath: "weekly reports", files: ($wa | fromjson)}, aoc: {title: "Area of Conquest Activity Reports", id: "aocReportsList", folderPath: "aoc reports", files: ($aoc | fromjson)}}' > files.json
+            --argjson gl "$GL_FILES" \
+            --argjson wa "$WA_FILES" \
+            --argjson aoc "$AOC_FILES" \
+            '{
+              gl: {title: "Essential Information", id: "guidelines", folderPath: "guidelines", files: $gl},
+              wa: {title: "Weekly Activity Reports", id: "waReportsList", folderPath: "weekly reports", files: $wa},
+              aoc: {title: "Area of Conquest Activity Reports", id: "aocReportsList", folderPath: "aoc reports", files: $aoc}
+            }' > files.json
           
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add files.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update file list"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update file list" && git push)
