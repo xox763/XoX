@@ -29,7 +29,6 @@
       .report-info {
           display: flex;
           justify-content: flex-start;
-          margin-bottom: 20px;
       }
 
       .report-info table {
@@ -106,6 +105,30 @@
       th.desc .sort-icon {
         border-bottom-color: #333;
         transform: rotate(180deg);
+      }
+
+      .slide-details {
+        overflow: hidden;
+        margin-bottom: 20px;
+        display: block;  
+      }
+
+      summary {
+        padding: 0 15px;
+        cursor: pointer;
+      }
+
+       
+      .content {
+        overflow: hidden;
+        min-height: 0; 
+        padding: 0 15px;
+        transition: padding 0.3s ease-out;  
+      }
+
+       
+      .slide-details[open] .content {
+        padding: 15px;
       }
 
       .eval-zero { color: red; background-color: #ffd2d260; }
@@ -224,82 +247,85 @@
       <h1 class="report-title">Weekly Guild Activity Report</h1>
     </div>
 
-    <div class="report-info">
-      <table>
-                  <tbody><tr>
-            <td>Start Date</td>
-            <td>2026-01-19</td>
-          </tr>
-                  <tr>
-            <td>End Date</td>
-            <td>2026-01-25</td>
-          </tr>
-                  <tr>
-            <td>Duration</td>
-            <td>7 days</td>
-          </tr>
-                  <tr>
-            <td>File Name</td>
-            <td>activity_20260119_7days.html</td>
-          </tr>
-                  <tr>
-            <td>Guild Name</td>
-            <td>XoX Server 469</td>
-          </tr>
-                  <tr>
-            <td>Guild Prestige Progress</td>
-            <td>295,330</td>
-          </tr>
-                  <tr>
-            <td>Estimated Final Guild Prestige</td>
-            <td>63</td>
-          </tr>
-                  <tr>
-            <td>Guild War - League</td>
-            <td>Gold League</td>
-          </tr>
-                  <tr>
-            <td>Guild War - Rank</td>
-            <td>1</td>
-          </tr>
-                  <tr>
-            <td>Guild War - Score</td>
-            <td>4,957</td>
-          </tr>
-                  <tr>
-            <td>Clash of Worlds - League</td>
-            <td>Earl League</td>
-          </tr>
-                  <tr>
-            <td>Clash of Worlds - Division</td>
-            <td>5</td>
-          </tr>
-                  <tr>
-            <td>Clash of Worlds - Score</td>
-            <td>5,112</td>
-          </tr>
-                  <tr>
-            <td>Raid - Type</td>
-            <td>Cradle of the Stars</td>
-          </tr>
-                  <tr>
-            <td>Raid - Max Level Killed</td>
-            <td>150</td>
-          </tr>
-                  <tr>
-            <td>Raid - Guild Morale</td>
-            <td>17,421</td>
-          </tr>
-                  <tr>
-            <td>Raid - Total Boss Damage</td>
-            <td>430,288,599</td>
-          </tr>
-                  <tr>
-            <td>Raid - Total Boss Attacks</td>
-            <td>116</td>
-          </tr>
-              </tbody></table>
-    </div>
+    <details id="dataOverview" class="slide-details">
+      <summary>Overview</summary>
+      <div class="report-info content">
+        <table>
+                      <tbody><tr>
+              <td>Start Date</td>
+              <td>2026-01-19</td>
+            </tr>
+                      <tr>
+              <td>End Date</td>
+              <td>2026-01-25</td>
+            </tr>
+                      <tr>
+              <td>Duration</td>
+              <td>7 days</td>
+            </tr>
+                      <tr>
+              <td>File Name</td>
+              <td>activity_20260119_7days.html</td>
+            </tr>
+                      <tr>
+              <td>Guild Name</td>
+              <td>XoX Server 469</td>
+            </tr>
+                      <tr>
+              <td>Guild Prestige Progress</td>
+              <td>295,330</td>
+            </tr>
+                      <tr>
+              <td>Estimated Final Guild Prestige</td>
+              <td>63</td>
+            </tr>
+                      <tr>
+              <td>Guild War - League</td>
+              <td>Gold League</td>
+            </tr>
+                      <tr>
+              <td>Guild War - Rank</td>
+              <td>1</td>
+            </tr>
+                      <tr>
+              <td>Guild War - Score</td>
+              <td>4,957</td>
+            </tr>
+                      <tr>
+              <td>Clash of Worlds - League</td>
+              <td>Earl League</td>
+            </tr>
+                      <tr>
+              <td>Clash of Worlds - Division</td>
+              <td>5</td>
+            </tr>
+                      <tr>
+              <td>Clash of Worlds - Score</td>
+              <td>5,112</td>
+            </tr>
+                      <tr>
+              <td>Raid - Type</td>
+              <td>Cradle of the Stars</td>
+            </tr>
+                      <tr>
+              <td>Raid - Max Level Killed</td>
+              <td>150</td>
+            </tr>
+                      <tr>
+              <td>Raid - Guild Morale</td>
+              <td>17,421</td>
+            </tr>
+                      <tr>
+              <td>Raid - Total Boss Damage</td>
+              <td>430,288,599</td>
+            </tr>
+                      <tr>
+              <td>Raid - Total Boss Attacks</td>
+              <td>116</td>
+            </tr>
+                  </tbody></table>
+      </div>
+    </details>
 
     <div id="dataTable" class="report-data hide-aux">
       <table>
