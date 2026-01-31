@@ -160,6 +160,14 @@
       margin-right: 10px;
     }
 
+    .reports-list li.raid-boss-report {
+      border-left: 3px solid #a200ff;
+    }
+    .reports-list li.raid-boss-report a::before {
+      content: "💀 ";
+      margin-right: 10px;
+    }
+
     .report-section {
       background-color: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -405,6 +413,14 @@
           li.classList.add('activity-report');
           a.href = '#';
           a.innerHTML = `Activity Report: <span class="date">${formatDate(fileObj)}</span>`;
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            viewReport(category, pathname);
+          });
+        } else if (fileObj.docType === 'raid_boss') {
+          li.classList.add('raid-boss-report');
+          a.href = '#';
+          a.innerHTML = `Raid Boss Report: <span class="date">${formatDate(fileObj)}</span>`;
           a.addEventListener('click', (e) => {
             e.preventDefault();
             viewReport(category, pathname);
