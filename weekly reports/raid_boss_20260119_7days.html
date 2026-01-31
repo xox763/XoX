@@ -27,7 +27,7 @@
       .report-title { text-align: center; font-size: 24px; color: #2c3e50; }
 
       .report-info {
-          display: block;
+          display: flex;
           justify-content: flex-start;
       }
 
@@ -136,6 +136,11 @@
       .eval-low { background-color: #ffd2d238; }
       .eval-active {}
       .eval-super-active { background-color: #cfeecfA0; color: #1a5e1a; font-weight: bold; }
+
+      #dataTable table {
+        table-layout: fixed; 
+        width: 100%;
+      }
 
       #dataTable td:first-child {
         white-space: nowrap;
