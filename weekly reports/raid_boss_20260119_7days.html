@@ -14,26 +14,45 @@
           padding-bottom: 20px;
       }
 
+      table {
+        display: table;
+        width: max-content;
+        table-layout: auto;
+        margin: 0 auto;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+
+      thead th, tfoot td {
+        background-color: #3783af;
+        color: white;
+        padding: 5px 10px;
+        border: 1px solid #2d6a8a;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      td {
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        text-align: right;
+      }
+
+      td:first-child { text-align: left; }
+
       .report-wrapper {
         width: 100%;
-        margin: 0 auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      @media (min-width: 768px) {
-        .report-wrapper {
-          max-width: 1500px;
-        }
-
-        .report-title {
-          text-align: center;
-        }
-      }
-
-      .report-header, .report-data, .report-comment {
-        width: 100%;
-      }
-
+         
       .report-header {
+        width: 100%;
         padding-bottom: 20px;
         margin-bottom: 20px;
       }
@@ -41,53 +60,30 @@
       .report-title { text-align: center; font-size: 24px; color: #2c3e50; }
 
       .report-info {
-          display: flex;
-          justify-content: flex-start;
+        display: flex;
+        align-self: flex-start; 
+        margin-left: 0;
+        margin-right: auto;
       }
 
       .report-info table {
-          width: auto;
-          border: 1px solid #f0d493;
-          border-collapse: collapse;
-          box-shadow: 0 0 0 1px #f0d493, 0 3px 10px rgba(192, 170, 129, 0.2);
+        width: auto;
+        border: 1px solid #f0d493;
+        border-collapse: collapse;
+        box-shadow: 0 0 0 1px #f0d493, 0 3px 10px rgba(192, 170, 129, 0.2);
       }
 
       .report-info td {
-          padding: 5px 10px;
-          text-align: left;
-          border: 1px solid #ddd;
-          background-color: #f2ead9;
+        padding: 5px 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+        background-color: #f2ead9;
       }
 
       .report-info td:nth-child(n + 2) {
-          text-align: right;
-          background-color: #f3efe7;
+        text-align: right;
+        background-color: #f3efe7;
       }
-
-      table {
-          width: 100%;
-          border-collapse: collapse;
-          font-size: 14px;
-      }
-
-      thead th, tfoot td {
-          background-color: #3783af;
-          color: white;
-          padding: 5px 10px;
-          border: 1px solid #2d6a8a;
-      }
-
-      tbody tr:nth-child(even) {
-          background-color: #f2f2f2;
-      }
-
-      td {
-          padding: 5px 10px;
-          border: 1px solid #ddd;
-          text-align: right;
-      }
-
-      td:first-child { text-align: left; }
 
       .sort-icon {
         display: inline-block;
