@@ -24,15 +24,21 @@
         overflow: visible;
         display: flex;
         flex-direction: column;
-        align-items: center;
       }
 
          
       .report-header {
+        width: 100%;
         margin-bottom: 30px;
       }
 
-      .report-title { font-size: 24px; color: #2c3e50; }
+      .report-title {
+        margin-left: auto;
+        margin-right: auto;
+        width: max-content;
+        font-size: 24px;
+        color: #2c3e50;
+      }
 
       .report-info {
         align-self: flex-start; 
@@ -84,6 +90,50 @@
         background-color: #f3efe7;
       }
 
+      .report-data {
+        width: 100%;
+      }
+
+      .report-data table {
+        margin-left: auto;
+        margin-right: auto;
+        width: max-content;
+        background-color: #f2ead9;
+      }
+
+      .report-data thead th, .report-data tfoot td {
+        width: 0;
+        background-color: #3783af;
+        color: white;
+        padding: 5px 10px;
+        border: 1px solid #2d6a8a;
+      }
+
+      .report-data tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .report-data td {
+        white-space: nowrap;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        text-align: right;
+      }
+
+      .report-data td:first-child {
+        text-align: left;
+        font-weight: bold;
+        min-width: 120px;
+      }
+
+      .report-data .aux-col {
+        display: table-cell;
+      }
+
+      .report-data.hide-aux .aux-col {
+        display: none;
+      }
+
       .sort-icon {
         display: inline-block;
         margin-top: 6px;
@@ -121,44 +171,6 @@
       .eval-low { background-color: #ffd2d238; }
       .eval-active {}
       .eval-super-active { background-color: #cfeecfA0; color: #1a5e1a; font-weight: bold; }
-
-      #reportData table {
-        width: max-content;
-        background-color: #f2ead9;
-      }
-
-      #reportData thead th, #reportData tfoot td {
-        width: 0;
-        background-color: #3783af;
-        color: white;
-        padding: 5px 10px;
-        border: 1px solid #2d6a8a;
-      }
-
-      #reportData tbody tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-
-      #reportData td {
-        white-space: nowrap;
-        padding: 5px 10px;
-        border: 1px solid #ddd;
-        text-align: right;
-      }
-
-      #reportData td:first-child {
-        text-align: left;
-        font-weight: bold;
-        min-width: 120px;
-      }
-
-      #reportData .aux-col {
-        display: table-cell;
-      }
-
-      #reportData.hide-aux .aux-col {
-        display: none;
-      }
 
       .report-comment {
         width: 100%;
