@@ -1305,7 +1305,7 @@
         }
     });
 
-    if (true || debugMenuCommandsEnabled) {
+    if (false || debugMenuCommandsEnabled) {
         GM_registerMenuCommand('(Debug) Copy Data.JSON', async () => {
             GM_setClipboard(JSON.stringify([...rawData.values()]));
         });
