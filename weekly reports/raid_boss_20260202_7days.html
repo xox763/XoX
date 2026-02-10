@@ -1,6 +1,6 @@
-<html><head>
-
-
+<!DOCTYPE html>
+<html>
+<head>
   <base target="_top">
   <meta charset="UTF-8">
   <style>
@@ -528,24 +528,25 @@
   </style>
   </head>
 <body>
-  
-  
-  
+  <script>
+    function doNext() {}
+  </script>
 
+  
   
     
 
   <div class="report-wrapper">
     <div class="report-header">
-      <h1 class="report-title">Weekly Raid Activity Report</h1>
+      <h1 class="report-title">Weekly Raid Boss Report</h1>
     </div>
 
     <div class="report-info">
-      <details id="dataOverview" class="slide-details" open="">
+      <details id="dataOverview" class="slide-details" open>
         <summary>Overview</summary>
         <div class="content">
           <table>
-                          <tbody><tr>
+                          <tr>
                 <td>Start Date</td>
                 <td>2026-02-02</td>
               </tr>
@@ -581,7 +582,7 @@
                 <td>Raid - Total Boss Attacks</td>
                 <td>122</td>
               </tr>
-                      </tbody></table>
+                      </table>
         </div>
       </details>
     </div>
@@ -590,7 +591,7 @@
 
       <table>
         <thead>
-          <tr><th rowspan="2" data-type="text" data-column="0" class="sortable">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="img-cont">Team Composition</th><th colspan="7">Power</th><th colspan="2">Result</th><th rowspan="2" data-type="img-cont" class="aux-col">Buffs</th></tr><tr><th data-type="numeric" data-column="2" class="sortable">Pet <span class="sort-icon"></span></th><th data-type="numeric" data-column="3" class="sortable">H1 <span class="sort-icon"></span></th><th data-type="numeric" data-column="4" class="sortable">H2 <span class="sort-icon"></span></th><th data-type="numeric" data-column="5" class="sortable">H3 <span class="sort-icon"></span></th><th data-type="numeric" data-column="6" class="sortable">H4 <span class="sort-icon"></span></th><th data-type="numeric" data-column="7" class="sortable">H5 <span class="sort-icon"></span></th><th data-type="numeric" data-column="8" class="sortable">Team <span class="sort-icon"></span></th><th data-type="numeric" data-column="9" class="sortable">Boss Level <span class="sort-icon"></span></th><th data-type="numeric" data-column="10" class="sortable">Damage <span class="sort-icon"></span></th></tr>        </thead>
+          <tr><th rowspan="2" data-type="text" data-column="0">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="img-cont">Team Composition</th><th colspan="7">Power</th><th colspan="2">Result</th><th rowspan="2" data-type="img-cont" class="aux-col">Buffs</th></tr><tr><th data-type="numeric" data-column="2">Pet <span class="sort-icon"></span></th><th data-type="numeric" data-column="3">H1 <span class="sort-icon"></span></th><th data-type="numeric" data-column="4">H2 <span class="sort-icon"></span></th><th data-type="numeric" data-column="5">H3 <span class="sort-icon"></span></th><th data-type="numeric" data-column="6">H4 <span class="sort-icon"></span></th><th data-type="numeric" data-column="7">H5 <span class="sort-icon"></span></th><th data-type="numeric" data-column="8">Team <span class="sort-icon"></span></th><th data-type="numeric" data-column="9">Boss Level <span class="sort-icon"></span></th><th data-type="numeric" data-column="10">Damage <span class="sort-icon"></span></th></tr>        </thead>
                 <tbody>
           <tr><td>Random</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -24784,20 +24785,8 @@
 
       applyViewerParams(docParams);
 
-      if (nextActions?.[0].startsWith("publish")) {
-        nextActions.shift();
-        const button = document.getElementById("publish");
-        button.click();
-      } else if (nextActions?.[0].startsWith("copyFullHtml")) {
-        nextActions.shift();
-        const button = document.getElementById("copyFullHtml");
-        button.click();
-      } else if (nextActions?.[0] === "close") {
-        nextActions.shift();
-        google.script.host.close();
-      }
+      doNext();
     });
   </script>
-
-
-</body></html>
+</body>
+</html>
