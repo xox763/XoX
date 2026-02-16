@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
+
+
   <base target="_top">
   <meta charset="UTF-8">
   <style>
@@ -171,10 +171,11 @@
       margin: 0;
       padding: 4px;
       border-radius: 6px;
-      background-color: #f9f9f9;
+      background-color: #e3eff1e3;
       border: 1px solid #ddd;
       font-family: sans-serif;
       font-size: 13px;
+      white-space: normal;
     }
 
     .report-comment ul {
@@ -185,7 +186,7 @@
 
     .report-comment li {
       padding: 8px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #c1bbc9db;
       line-height: 1.2;
       color: #555;
     }
@@ -244,6 +245,8 @@
 
   
   
+
+  
     
 
   <div class="report-wrapper">
@@ -252,11 +255,11 @@
     </div>
 
     <div class="report-info">
-      <details id="dataOverview" class="slide-details" open>
+      <details id="dataOverview" class="slide-details" open="">
         <summary>Overview</summary>
         <div class="content">
           <table>
-                          <tr>
+                          <tbody><tr>
                 <td>Start Date</td>
                 <td>2026-02-09</td>
               </tr>
@@ -328,7 +331,7 @@
                 <td>Raid - Total Boss Attacks</td>
                 <td>103</td>
               </tr>
-                      </table>
+                      </tbody></table>
         </div>
       </details>
     </div>
@@ -337,26 +340,28 @@
 
       <table>
         <thead>
-          <tr><th rowspan="2" data-type="text" data-column="0">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="numeric" data-column="1">Days <span class="sort-icon"></span></th><th colspan="4">Daily Activities</th><th>GW</th><th colspan="2">Clash of Worlds</th><th colspan="4">Raid</th><th colspan="2" class="aux-col">Evaluation & Rewards</th></tr><tr><th data-type="numeric" data-column="2">Titanite <span class="sort-icon"></span></th><th data-type="numeric" data-column="3">Activity <span class="sort-icon"></span></th><th data-type="numeric" data-column="4">Guild Prestige <span class="sort-icon"></span></th><th data-type="numeric" data-column="5">Adventure <span class="sort-icon"></span></th><th data-type="numeric" data-column="6">Guild War <span class="sort-icon"></span></th><th data-type="numeric" data-column="7">Hero <span class="sort-icon"></span></th><th data-type="numeric" data-column="8">Titan <span class="sort-icon"></span></th><th data-type="numeric" data-column="9">Minions <span class="sort-icon"></span></th><th data-type="numeric" data-column="10">Morale <span class="sort-icon"></span></th><th data-type="numeric" data-column="11">Boss <span class="sort-icon"></span></th><th data-type="numeric" data-column="12">Damage <span class="sort-icon"></span></th><th data-type="numeric" data-column="13" class="aux-col">Evaluation Index <span class="sort-icon"></span></th><th data-type="numeric" data-column="14" class="aux-col">Present <span class="sort-icon"></span></th></tr>        </thead>
+          <tr><th rowspan="2" data-type="text" data-column="0" class="sortable">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="numeric" data-column="1" class="sortable">Days <span class="sort-icon"></span></th><th colspan="4">Daily Activities</th><th>GW</th><th colspan="2">Clash of Worlds</th><th colspan="4">Raid</th><th colspan="2" class="aux-col">Evaluation &amp; Rewards</th></tr><tr><th data-type="numeric" data-column="2" class="sortable">Titanite <span class="sort-icon"></span></th><th data-type="numeric" data-column="3" class="sortable">Activity <span class="sort-icon"></span></th><th data-type="numeric" data-column="4" class="sortable">Guild Prestige <span class="sort-icon"></span></th><th data-type="numeric" data-column="5" class="sortable">Adventure <span class="sort-icon"></span></th><th data-type="numeric" data-column="6" class="sortable">Guild War <span class="sort-icon"></span></th><th data-type="numeric" data-column="7" class="sortable">Hero <span class="sort-icon"></span></th><th data-type="numeric" data-column="8" class="sortable">Titan <span class="sort-icon"></span></th><th data-type="numeric" data-column="9" class="sortable">Minions <span class="sort-icon"></span></th><th data-type="numeric" data-column="10" class="sortable">Morale <span class="sort-icon"></span></th><th data-type="numeric" data-column="11" class="sortable">Boss <span class="sort-icon"></span></th><th data-type="numeric" data-column="12" class="sortable">Damage <span class="sort-icon"></span></th><th data-type="numeric" data-column="13" class="aux-col sortable">Evaluation Index <span class="sort-icon"></span></th><th data-type="numeric" data-column="14" class="aux-col sortable">Present <span class="sort-icon"></span></th></tr>        </thead>
                 <tbody>
           <tr><td>Al Kijan</td><td>7</td><td>784</td><td>8,901</td><td>24.1K</td><td>20</td><td>6/10</td><td>4</td><td>2</td><td>9</td><td>399</td><td>5</td><td>1.4M</td><td class="eval-active aux-col">76.5</td><td class="aux-col">2</td></tr><tr><td>Anophelus</td><td>7</td><td>6,587</td><td>49.6K</td><td>34.9K</td><td>23</td><td>8/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>31.2M</td><td class="eval-super-active aux-col">194.7</td><td class="aux-col">5</td></tr><tr><td>BOWMORE</td><td>7</td><td>1,785</td><td>29.1K</td><td>30.2K</td><td>25</td><td>6/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>12.8M</td><td class="eval-active aux-col">114.8</td><td class="aux-col">3</td></tr><tr><td>EmmiSant</td><td>7</td><td>969</td><td>17.9K</td><td>20.1K</td><td>2</td><td>-</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td>9</td><td>404</td><td>2</td><td>1.7M</td><td class="eval-active aux-col">48.9</td><td class="aux-col">1</td></tr><tr><td>Esi Gorg</td><td>7</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td>-</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero aux-col">0</td><td class="aux-col">0</td></tr><tr><td>Flydman</td><td>7</td><td>1,181</td><td>39.6K</td><td>17.9K</td><td>5</td><td>-</td><td>3</td><td>1</td><td>7</td><td>410</td><td>5</td><td>4.6M</td><td class="eval-active aux-col">74.8</td><td class="aux-col">2</td></tr><tr><td>Gangsteris</td><td>7</td><td>841</td><td>12.3K</td><td>26.5K</td><td>25</td><td>-</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td>9</td><td>232</td><td>5</td><td>565.4K</td><td class="eval-active aux-col">69.2</td><td class="aux-col">2</td></tr><tr><td>Ihg</td><td>7</td><td>2,506</td><td>39.9K</td><td>32.5K</td><td>27</td><td>10/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>29.0M</td><td class="eval-active aux-col">177.9</td><td class="aux-col">4</td></tr><tr><td>Kajrilisar</td><td>7</td><td>3,525</td><td>24.7K</td><td>26.2K</td><td>7</td><td>9/10</td><td>4</td><td>4</td><td>9</td><td>650</td><td>5</td><td>3.3M</td><td class="eval-active aux-col">125</td><td class="aux-col">3</td></tr><tr><td>Kanibalas</td><td>7</td><td>795</td><td>12.2K</td><td>25.8K</td><td>25</td><td>-</td><td>3</td><td>2</td><td>9</td><td>238</td><td>5</td><td>291.1K</td><td class="eval-active aux-col">78.6</td><td class="aux-col">2</td></tr><tr><td>Kebabas</td><td>7</td><td>805</td><td>11.9K</td><td>25.9K</td><td>24</td><td>-</td><td>2</td><td>2</td><td>9</td><td>282</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-active aux-col">77.1</td><td class="aux-col">2</td></tr><tr><td>Kolm</td><td>7</td><td>1,335</td><td>33.0K</td><td>28.4K</td><td>25</td><td>6/10</td><td>5</td><td>4</td><td>9</td><td>650</td><td>5</td><td>12.7M</td><td class="eval-active aux-col">113.6</td><td class="aux-col">3</td></tr><tr><td>lULU</td><td>7</td><td>3,435</td><td>35.4K</td><td>25.8K</td><td>24</td><td>10/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>10.9M</td><td class="eval-active aux-col">167.9</td><td class="aux-col">4</td></tr><tr><td>Mar</td><td>7</td><td>3,352</td><td>50.2K</td><td>31.9K</td><td>27</td><td>10/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>14.2M</td><td class="eval-active aux-col">169.1</td><td class="aux-col">4</td></tr><tr><td>mo-mo</td><td>7</td><td>1,155</td><td>47.8K</td><td>31.6K</td><td>15</td><td>10/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>18.8M</td><td class="eval-active aux-col">145.5</td><td class="aux-col">3</td></tr><tr><td>NauT</td><td>7</td><td>1,273</td><td>45.6K</td><td>22.4K</td><td>14</td><td class="eval-zero">0/10</td><td>1</td><td>1</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-active aux-col">64</td><td class="aux-col">2</td></tr><tr><td>Numencito</td><td>7</td><td>540</td><td>15.0K</td><td>17.0K</td><td>8</td><td>8/10</td><td>5</td><td>4</td><td>9</td><td>650</td><td>5</td><td>13.1M</td><td class="eval-active aux-col">81.6</td><td class="aux-col">2</td></tr><tr><td>Ralfda1derLlama</td><td>7</td><td>3,037</td><td>37.4K</td><td>25.3K</td><td>13</td><td>8/10</td><td>6</td><td>4</td><td>9</td><td>975</td><td>5</td><td>11.0M</td><td class="eval-active aux-col">118.8</td><td class="aux-col">3</td></tr><tr><td>Random</td><td>7</td><td>3,585</td><td>57.3K</td><td>26.7K</td><td>27</td><td>10/10</td><td>5</td><td>4</td><td>9</td><td>530</td><td>5</td><td>2.2M</td><td class="eval-super-active aux-col">182.4</td><td class="aux-col">5</td></tr><tr><td>Reikachan</td><td>7</td><td>2,450</td><td>13.9K</td><td>30.6K</td><td>21</td><td>8/10</td><td>5</td><td>4</td><td>9</td><td>650</td><td>5</td><td>2.9M</td><td class="eval-active aux-col">114.6</td><td class="aux-col">3</td></tr><tr><td>Sam 81</td><td>7</td><td>917</td><td>48.2K</td><td>30.7K</td><td>22</td><td>7/10</td><td>4</td><td>4</td><td>9</td><td>624</td><td>5</td><td>19.6M</td><td class="eval-active aux-col">132.2</td><td class="aux-col">3</td></tr><tr><td>SodCheun</td><td>7</td><td>1,936</td><td>38.2K</td><td>25.7K</td><td>13</td><td>4/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>6.3M</td><td class="eval-active aux-col">94</td><td class="aux-col">3</td></tr><tr><td>Team 2PFF</td><td>7</td><td>182</td><td>7,230</td><td>13.5K</td><td>11</td><td>-</td><td>4</td><td>2</td><td>9</td><td>640</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-active aux-col">52.1</td><td class="aux-col">1</td></tr><tr><td>Team PIETRAS</td><td>7</td><td>631</td><td>12.9K</td><td>14.1K</td><td>10</td><td>-</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td>9</td><td>433</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-active aux-col">54</td><td class="aux-col">1</td></tr><tr><td>Valerix</td><td>7</td><td>1,155</td><td>63.0K</td><td>27.9K</td><td>27</td><td>8/10</td><td>2</td><td>1</td><td>9</td><td>650</td><td>1</td><td>2.8M</td><td class="eval-active aux-col">106.1</td><td class="aux-col">3</td></tr><tr><td>Vistro</td><td>7</td><td>1,410</td><td>25.7K</td><td>28.9K</td><td>27</td><td>6/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>2.0M</td><td class="eval-active aux-col">113.6</td><td class="aux-col">3</td></tr><tr><td>Yorisar</td><td>7</td><td>2,784</td><td>82.1K</td><td>31.4K</td><td>15</td><td>8/10</td><td>6</td><td>4</td><td>9</td><td>650</td><td>5</td><td>26.5M</td><td class="eval-active aux-col">176</td><td class="aux-col">4</td></tr><tr><td>ZED</td><td>7</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0/10</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero">0</td><td class="eval-zero aux-col">0</td><td class="aux-col">0</td></tr>        </tbody>
                         <tfoot>
-          <tr><td>TOTAL</td><td>196</td><td>49.0K</td><td>858.9K</td><td>676.0K</td><td>482</td><td>142/200</td><td>107</td><td>75</td><td>223</td><td>14.3K</td><td>103</td><td>227.7M</td><td class="aux-col">2,922.9</td><td class="aux-col">73</td></tr><tr><td>AVERAGE</td><td>7</td><td>1,748.4</td><td>30.7K</td><td>24.1K</td><td>17.2</td><td>7.1/7.1</td><td>3.8</td><td>2.7</td><td>8</td><td>509.5</td><td>3.7</td><td>8.1M</td><td class="aux-col">104.4</td><td class="aux-col">2.6</td></tr>        </tfoot>
+          <tr><td>TOTAL</td><td>196</td><td>49.0K</td><td>858.9K</td><td>676.0K</td><td>482</td><td>142/200</td><td>107</td><td>75</td><td>223</td><td>14.3K</td><td>103</td><td>227.7M</td><td class="aux-col">2,922.9</td><td class="aux-col">73</td></tr><tr><td>AVERAGE</td><td>7</td><td>1,748.4</td><td>30.7K</td><td>24.1K</td><td>17.2</td><td>7.1/7.1</td><td>3.8</td><td>2.7</td><td>8</td><td>509.5</td><td>3.7</td><td>8.1M</td><td class="aux-col">104.4</td><td class="aux-col">2.6</td></tr>
+                      <tr><td colspan="15">
+              <div class="report-comment">
+                <ul>
+                                      <li>
+                      <span style="color: #ff5733;">*</span> NauT(279309367) joined on 2026-02-09 (Monday).                     </li>
+                                      <li>
+                      <span style="color: #ff5733;">*</span> Mai.469 was banned on 2026-02-09 (Monday). Expelled due to inactivity and blacklisted. Frequently fails to participate in guild events, with overall low contribution to guild activities.                    </li>
+                                      <li>
+                      <span style="color: #ff5733;">*</span> Moto was banned on 2026-02-11 (Wednesday). Performed insincere and intentional trolling attacks in Clash of Worlds. Overall guild activity is extremely low. Suspected of transferring to another server after trolling.                    </li>
+                                      <li>
+                      <span style="color: #ff5733;">*</span> Joe Black left on 2026-02-14 (Saturday). Declared a temporary leave to focus on real-life commitments (IRL).                    </li>
+                                  </ul>
+              </div>
+            </td></tr>
+                    </tfoot>
               </table>
 
-              <div class="report-comment">
-          <ul>
-                          <li>
-                <span style="color: #ff5733;">*</span> NauT(279309367) joined on 2026-02-09 (Monday).               </li>
-                          <li>
-                <span style="color: #ff5733;">*</span> Mai.469 was banned on 2026-02-09 (Monday). Expelled due to inactivity and blacklisted. Frequently fails to participate in guild events, with overall low contribution to guild activities.              </li>
-                          <li>
-                <span style="color: #ff5733;">*</span> Moto was banned on 2026-02-11 (Wednesday). Performed insincere and intentional trolling attacks in Clash of Worlds. Overall guild activity is extremely low. Suspected of transferring to another server after trolling.              </li>
-                          <li>
-                <span style="color: #ff5733;">*</span> Joe Black left on 2026-02-14 (Saturday). Declared a temporary leave to focus on real-life commitments (IRL).              </li>
-                      </ul>
-        </div>
-      
     </div>
   </div>
 
@@ -740,5 +745,5 @@
       doNext();
     });
   </script>
-</body>
-</html>
+
+</body></html>
