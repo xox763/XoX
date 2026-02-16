@@ -176,6 +176,7 @@
       font-family: sans-serif;
       font-size: 13px;
       white-space: normal;
+      box-sizing: border-box;
     }
 
     .report-comment ul {
@@ -193,6 +194,10 @@
 
     .report-comment li:last-child {
       border-bottom: none;
+    }
+
+    .report-data table tfoot tr td[colspan]:has(.report-comment) {
+      padding: 4px;
     }
 
     .hidden {
