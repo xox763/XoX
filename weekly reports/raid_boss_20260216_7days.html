@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
+
+
   <base target="_top">
   <meta charset="UTF-8">
   <style>
@@ -171,10 +171,12 @@
       margin: 0;
       padding: 4px;
       border-radius: 6px;
-      background-color: #f9f9f9;
+      background-color: #e3eff1e3;
       border: 1px solid #ddd;
       font-family: sans-serif;
       font-size: 13px;
+      white-space: normal;
+      box-sizing: border-box;
     }
 
     .report-comment ul {
@@ -185,13 +187,17 @@
 
     .report-comment li {
       padding: 8px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #c1bbc9db;
       line-height: 1.2;
       color: #555;
     }
 
     .report-comment li:last-child {
       border-bottom: none;
+    }
+
+    .report-data table tfoot tr td[colspan]:has(.report-comment) {
+      padding: 4px;
     }
 
     .hidden {
@@ -534,6 +540,8 @@
 
   
   
+
+  
     
 
   <div class="report-wrapper">
@@ -542,11 +550,11 @@
     </div>
 
     <div class="report-info">
-      <details id="dataOverview" class="slide-details" open>
+      <details id="dataOverview" class="slide-details" open="">
         <summary>Overview</summary>
         <div class="content">
           <table>
-                          <tr>
+                          <tbody><tr>
                 <td>Start Date</td>
                 <td>2026-02-16</td>
               </tr>
@@ -582,16 +590,16 @@
                 <td>Raid - Total Boss Attacks</td>
                 <td>95</td>
               </tr>
-                      </table>
+                      </tbody></table>
         </div>
       </details>
     </div>
 
-    <div id="reportData" class="report-data hide-aux">
+    <div id="reportData" class="report-data">
 
       <table>
         <thead>
-          <tr><th rowspan="2" data-type="text" data-column="0">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="img-cont">Team Composition</th><th colspan="7">Power</th><th colspan="2">Result</th><th rowspan="2" data-type="img-cont" class="aux-col">Buffs</th></tr><tr><th data-type="numeric" data-column="2">Pet <span class="sort-icon"></span></th><th data-type="numeric" data-column="3">H1 <span class="sort-icon"></span></th><th data-type="numeric" data-column="4">H2 <span class="sort-icon"></span></th><th data-type="numeric" data-column="5">H3 <span class="sort-icon"></span></th><th data-type="numeric" data-column="6">H4 <span class="sort-icon"></span></th><th data-type="numeric" data-column="7">H5 <span class="sort-icon"></span></th><th data-type="numeric" data-column="8">Team <span class="sort-icon"></span></th><th data-type="numeric" data-column="9">Boss Level <span class="sort-icon"></span></th><th data-type="numeric" data-column="10">Damage <span class="sort-icon"></span></th></tr>        </thead>
+          <tr><th rowspan="2" data-type="text" data-column="0" class="sortable">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="img-cont">Team Composition</th><th colspan="7">Power</th><th colspan="2">Result</th><th rowspan="2" data-type="img-cont" class="aux-col">Buffs</th></tr><tr><th data-type="numeric" data-column="2" class="sortable">Pet <span class="sort-icon"></span></th><th data-type="numeric" data-column="3" class="sortable">H1 <span class="sort-icon"></span></th><th data-type="numeric" data-column="4" class="sortable">H2 <span class="sort-icon"></span></th><th data-type="numeric" data-column="5" class="sortable">H3 <span class="sort-icon"></span></th><th data-type="numeric" data-column="6" class="sortable">H4 <span class="sort-icon"></span></th><th data-type="numeric" data-column="7" class="sortable">H5 <span class="sort-icon"></span></th><th data-type="numeric" data-column="8" class="sortable">Team <span class="sort-icon"></span></th><th data-type="numeric" data-column="9" class="sortable">Boss Level <span class="sort-icon"></span></th><th data-type="numeric" data-column="10" class="sortable">Damage <span class="sort-icon"></span></th></tr>        </thead>
                 <tbody>
           <tr><td>NauT</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -700,7 +708,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1HqY455D-dUWgeF8xMy9UMPyVRn_QSwhJ"></div>
 </div>
-</div></div></td><td>175.2K</td><td>153.9K</td><td>154.4K</td><td>188.8K</td><td>133.2K</td><td>188.9K</td><td>994.4K</td><td>150</td><td>6.0M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>175K</td><td>154K</td><td>154K</td><td>189K</td><td>133K</td><td>189K</td><td>994K</td><td>150</td><td>6.03M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -769,7 +777,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -887,7 +895,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>175.2K</td><td>45.4K</td><td>77.1K</td><td>80.0K</td><td>70.6K</td><td>67.3K</td><td>515.6K</td><td>150</td><td>33.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>175K</td><td>45.4K</td><td>77.1K</td><td>80K</td><td>70.6K</td><td>67.3K</td><td>516K</td><td>150</td><td>33.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -956,7 +964,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -1073,7 +1081,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>175.2K</td><td>50.8K</td><td>49.3K</td><td>48.7K</td><td>52.1K</td><td>68.2K</td><td>444.2K</td><td>150</td><td>13.6K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>175K</td><td>50.8K</td><td>49.3K</td><td>48.7K</td><td>52.1K</td><td>68.2K</td><td>444K</td><td>150</td><td>13.6K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -1142,7 +1150,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -1259,7 +1267,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>175.2K</td><td>35.0K</td><td>50.4K</td><td>33.6K</td><td>53.7K</td><td>54.3K</td><td>402.1K</td><td>150</td><td>238.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>175K</td><td>35K</td><td>50.4K</td><td>33.6K</td><td>53.7K</td><td>54.3K</td><td>402K</td><td>150</td><td>238K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -1328,7 +1336,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -1445,7 +1453,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>175.2K</td><td>32.5K</td><td>27.3K</td><td>27.5K</td><td>54.4K</td><td>34.1K</td><td>350.9K</td><td>150</td><td>29.5K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>175K</td><td>32.5K</td><td>27.3K</td><td>27.5K</td><td>54.4K</td><td>34.1K</td><td>351K</td><td>150</td><td>29.5K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -1514,7 +1522,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -1632,7 +1640,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>129.3K</td><td>151.3K</td><td>162.5K</td><td>131.2K</td><td>132.6K</td><td>158.2K</td><td>865.1K</td><td>160</td><td>32.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>129K</td><td>151K</td><td>163K</td><td>131K</td><td>133K</td><td>158K</td><td>865K</td><td>160</td><td>32.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -1819,7 +1827,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>144.9K</td><td>92.3K</td><td>115.1K</td><td>100.9K</td><td>97.2K</td><td>135.6K</td><td>686.0K</td><td>160</td><td>94.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>145K</td><td>92.3K</td><td>115K</td><td>101K</td><td>97.2K</td><td>136K</td><td>686K</td><td>160</td><td>94.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -2006,7 +2014,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>164.8K</td><td>79.4K</td><td>89.3K</td><td>52.8K</td><td>90.9K</td><td>64.5K</td><td>541.6K</td><td>160</td><td>4,205</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>165K</td><td>79.4K</td><td>89.3K</td><td>52.8K</td><td>90.9K</td><td>64.5K</td><td>542K</td><td>160</td><td>4,205</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -2192,7 +2200,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>164.8K</td><td>60.6K</td><td>51.6K</td><td>44.0K</td><td>58.6K</td><td>49.4K</td><td>428.9K</td><td>160</td><td>3,263</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>165K</td><td>60.6K</td><td>51.6K</td><td>44K</td><td>58.6K</td><td>49.4K</td><td>429K</td><td>160</td><td>3,263</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -2378,7 +2386,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>164.8K</td><td>52.1K</td><td>40.6K</td><td>37.4K</td><td>47.0K</td><td>38.0K</td><td>380.0K</td><td>160</td><td>582</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
+</div></div></td><td>165K</td><td>52.1K</td><td>40.6K</td><td>37.4K</td><td>47K</td><td>38K</td><td>380K</td><td>160</td><td>582</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 308.92857142857144px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -2565,7 +2573,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>181.9K</td><td>81.3K</td><td>143.7K</td><td>158.7K</td><td>176.9K</td><td>146.9K</td><td>889.5K</td><td>150</td><td>8.5M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
+</div></div></td><td>182K</td><td>81.3K</td><td>144K</td><td>159K</td><td>177K</td><td>147K</td><td>890K</td><td>150</td><td>8.51M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -2687,7 +2695,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>181.9K</td><td>93.3K</td><td>48.9K</td><td>63.9K</td><td>48.5K</td><td>127.0K</td><td>563.7K</td><td>150</td><td>379.1K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
+</div></div></td><td>182K</td><td>93.3K</td><td>48.9K</td><td>63.9K</td><td>48.5K</td><td>127K</td><td>564K</td><td>150</td><td>379K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -2810,7 +2818,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>155.2K</td><td>91.6K</td><td>195.3K</td><td>172.3K</td><td>164.6K</td><td>137.4K</td><td>916.5K</td><td>150</td><td>48.3M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
+</div></div></td><td>155K</td><td>91.6K</td><td>195K</td><td>172K</td><td>165K</td><td>137K</td><td>916K</td><td>150</td><td>48.3M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -2970,7 +2978,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -3103,7 +3111,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>154.9K</td><td>144.4K</td><td>163.9K</td><td>188.1K</td><td>153.3K</td><td>145.9K</td><td>950.6K</td><td>160</td><td>3.6M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
+</div></div></td><td>155K</td><td>144K</td><td>164K</td><td>188K</td><td>153K</td><td>146K</td><td>951K</td><td>160</td><td>3.59M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -3263,7 +3271,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -3396,7 +3404,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>154.9K</td><td>182.9K</td><td>150.6K</td><td>141.1K</td><td>174.0K</td><td>191.8K</td><td>995.5K</td><td>160</td><td>8.5M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
+</div></div></td><td>155K</td><td>183K</td><td>151K</td><td>141K</td><td>174K</td><td>192K</td><td>995K</td><td>160</td><td>8.46M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -3556,7 +3564,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -3689,7 +3697,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1COqCSRmerV4Xqi1d1QxljeQy4DtYLjbD"></div>
 </div>
-</div></div></td><td>154.9K</td><td>79.5K</td><td>125.5K</td><td>177.5K</td><td>180.4K</td><td>104.0K</td><td>821.8K</td><td>160</td><td>1.9M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
+</div></div></td><td>155K</td><td>79.5K</td><td>126K</td><td>177K</td><td>180K</td><td>104K</td><td>822K</td><td>160</td><td>1.93M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -3849,7 +3857,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -3981,7 +3989,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1eMP9OVwtfBTFC0yDesuiGAboWIzft-81"></div>
 </div>
-</div></div></td><td>154.9K</td><td>110.9K</td><td>109.1K</td><td>76.8K</td><td>137.3K</td><td>129.8K</td><td>718.8K</td><td>160</td><td>2.2M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
+</div></div></td><td>155K</td><td>111K</td><td>109K</td><td>76.8K</td><td>137K</td><td>130K</td><td>719K</td><td>160</td><td>2.18M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 723.2142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -4141,7 +4149,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -4274,7 +4282,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>75.2K</td><td>99.9K</td><td>175.4K</td><td>158.7K</td><td>72.8K</td><td>146.5K</td><td>728.6K</td><td>150</td><td>45.6M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 567.8571428571429px; height: 50px;"></div>
+</div></div></td><td>75.2K</td><td>99.9K</td><td>175K</td><td>159K</td><td>72.8K</td><td>147K</td><td>729K</td><td>150</td><td>45.6M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 567.8571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -4330,7 +4338,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -4528,7 +4536,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>75.2K</td><td>77.0K</td><td>106.8K</td><td>183.8K</td><td>169.8K</td><td>72.7K</td><td>685.3K</td><td>150</td><td>2.0M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>75.2K</td><td>77K</td><td>107K</td><td>184K</td><td>170K</td><td>72.7K</td><td>685K</td><td>150</td><td>2M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -4584,7 +4592,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -4714,7 +4722,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -4846,7 +4854,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>75.2K</td><td>46.2K</td><td>63.3K</td><td>39.6K</td><td>47.0K</td><td>50.1K</td><td>321.4K</td><td>150</td><td>121.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>75.2K</td><td>46.2K</td><td>63.3K</td><td>39.6K</td><td>47K</td><td>50.1K</td><td>321K</td><td>150</td><td>121K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -4902,7 +4910,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -5032,7 +5040,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -5164,7 +5172,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>136.3K</td><td>36.3K</td><td>47.1K</td><td>56.2K</td><td>68.8K</td><td>40.3K</td><td>384.9K</td><td>150</td><td>123.0K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>136K</td><td>36.3K</td><td>47.1K</td><td>56.2K</td><td>68.8K</td><td>40.3K</td><td>385K</td><td>150</td><td>123K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -5220,7 +5228,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -5350,7 +5358,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -5482,7 +5490,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>136.3K</td><td>57.7K</td><td>28.9K</td><td>50.2K</td><td>75.9K</td><td>59.4K</td><td>408.3K</td><td>150</td><td>3,102</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>136K</td><td>57.7K</td><td>28.9K</td><td>50.2K</td><td>75.9K</td><td>59.4K</td><td>408K</td><td>150</td><td>3,102</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -5538,7 +5546,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -5668,7 +5676,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -5800,7 +5808,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>138.4K</td><td>127.8K</td><td>45.1K</td><td>38.0K</td><td>155.2K</td><td>89.8K</td><td>594.3K</td><td>150</td><td>299.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
+</div></div></td><td>138K</td><td>128K</td><td>45.1K</td><td>38K</td><td>155K</td><td>89.8K</td><td>594K</td><td>150</td><td>300K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -5961,7 +5969,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>138.4K</td><td>62.6K</td><td>78.2K</td><td>92.6K</td><td>54.2K</td><td>76.5K</td><td>502.6K</td><td>150</td><td>36.9K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
+</div></div></td><td>138K</td><td>62.6K</td><td>78.2K</td><td>92.6K</td><td>54.2K</td><td>76.5K</td><td>503K</td><td>150</td><td>36.9K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -6120,7 +6128,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>138.4K</td><td>51.6K</td><td>54.8K</td><td>50.0K</td><td>52.3K</td><td>52.1K</td><td>399.2K</td><td>150</td><td>13.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
+</div></div></td><td>138K</td><td>51.6K</td><td>54.8K</td><td>50K</td><td>52.3K</td><td>52.1K</td><td>399K</td><td>150</td><td>13.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -6282,7 +6290,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>138.4K</td><td>51.0K</td><td>53.7K</td><td>45.2K</td><td>41.8K</td><td>42.8K</td><td>373.0K</td><td>150</td><td>11.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
+</div></div></td><td>138K</td><td>51K</td><td>53.7K</td><td>45.2K</td><td>41.8K</td><td>42.8K</td><td>373K</td><td>150</td><td>11.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -6445,7 +6453,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>138.4K</td><td>48.1K</td><td>47.3K</td><td>43.8K</td><td>39.8K</td><td>39.1K</td><td>356.5K</td><td>150</td><td>1.3M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
+</div></div></td><td>138K</td><td>48.1K</td><td>47.3K</td><td>43.8K</td><td>39.8K</td><td>39.1K</td><td>357K</td><td>150</td><td>1.27M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -6608,7 +6616,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>111.0K</td><td>123.1K</td><td>114.6K</td><td>164.3K</td><td>95.1K</td><td>122.8K</td><td>730.8K</td><td>150</td><td>3.9M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
+</div></div></td><td>111K</td><td>123K</td><td>115K</td><td>164K</td><td>95.1K</td><td>123K</td><td>731K</td><td>150</td><td>3.86M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 205.35714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -6771,7 +6779,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>111.0K</td><td>123.1K</td><td>128.4K</td><td>149.2K</td><td>153.1K</td><td>67.4K</td><td>732.2K</td><td>150</td><td>8.5M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 567.8571428571429px; height: 50px;"></div>
+</div></div></td><td>111K</td><td>123K</td><td>128K</td><td>149K</td><td>153K</td><td>67.4K</td><td>732K</td><td>150</td><td>8.52M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 567.8571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -6892,7 +6900,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -7024,7 +7032,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>95.5K</td><td>77.2K</td><td>126.1K</td><td>85.7K</td><td>72.9K</td><td>71.2K</td><td>528.6K</td><td>150</td><td>158.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
+</div></div></td><td>95.5K</td><td>77.2K</td><td>126K</td><td>85.7K</td><td>72.9K</td><td>71.2K</td><td>529K</td><td>150</td><td>159K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -7080,7 +7088,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -7265,7 +7273,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>95.5K</td><td>115.9K</td><td>76.0K</td><td>73.1K</td><td>134.6K</td><td>90.8K</td><td>585.8K</td><td>150</td><td>53.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
+</div></div></td><td>95.5K</td><td>116K</td><td>76K</td><td>73.1K</td><td>135K</td><td>90.8K</td><td>586K</td><td>150</td><td>53.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -7321,7 +7329,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -7506,7 +7514,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>95.5K</td><td>64.9K</td><td>80.4K</td><td>122.2K</td><td>117.7K</td><td>72.7K</td><td>553.4K</td><td>150</td><td>1.7M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
+</div></div></td><td>95.5K</td><td>64.9K</td><td>80.4K</td><td>122K</td><td>118K</td><td>72.7K</td><td>553K</td><td>150</td><td>1.67M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -7562,7 +7570,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -7747,7 +7755,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>95.5K</td><td>52.1K</td><td>45.2K</td><td>52.7K</td><td>39.3K</td><td>64.5K</td><td>349.4K</td><td>150</td><td>29.5K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
+</div></div></td><td>95.5K</td><td>52.1K</td><td>45.2K</td><td>52.7K</td><td>39.3K</td><td>64.5K</td><td>349K</td><td>150</td><td>29.5K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -7803,7 +7811,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -7988,7 +7996,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>95.5K</td><td>41.9K</td><td>36.0K</td><td>59.0K</td><td>39.4K</td><td>51.1K</td><td>322.8K</td><td>150</td><td>1,578</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
+</div></div></td><td>95.5K</td><td>41.9K</td><td>36K</td><td>59K</td><td>39.4K</td><td>51.1K</td><td>323K</td><td>150</td><td>1,578</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 516.0714285714286px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -8044,7 +8052,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -8229,7 +8237,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>92.3K</td><td>76.5K</td><td>150.3K</td><td>114.0K</td><td>177.1K</td><td>94.1K</td><td>704.3K</td><td>150</td><td>38.7M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>76.5K</td><td>150K</td><td>114K</td><td>177K</td><td>94.1K</td><td>704K</td><td>150</td><td>38.7M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -8246,7 +8254,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         6
@@ -8311,7 +8319,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -8548,7 +8556,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>92.3K</td><td>149.0K</td><td>149.0K</td><td>194.8K</td><td>155.9K</td><td>171.8K</td><td>912.9K</td><td>150</td><td>15.0M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>149K</td><td>149K</td><td>195K</td><td>156K</td><td>172K</td><td>913K</td><td>150</td><td>15M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -8565,7 +8573,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         6
@@ -8630,7 +8638,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -8867,7 +8875,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>92.3K</td><td>115.1K</td><td>193.7K</td><td>113.6K</td><td>96.4K</td><td>139.9K</td><td>751.1K</td><td>160</td><td>197.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>115K</td><td>194K</td><td>114K</td><td>96.4K</td><td>140K</td><td>751K</td><td>160</td><td>197K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -8884,7 +8892,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         6
@@ -8949,7 +8957,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -9186,7 +9194,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>92.3K</td><td>118.0K</td><td>77.7K</td><td>90.0K</td><td>79.5K</td><td>84.2K</td><td>541.8K</td><td>160</td><td>1.6M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>118K</td><td>77.7K</td><td>90K</td><td>79.5K</td><td>84.2K</td><td>542K</td><td>160</td><td>1.55M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -9203,7 +9211,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         6
@@ -9268,7 +9276,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -9505,7 +9513,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>92.3K</td><td>60.5K</td><td>57.4K</td><td>59.8K</td><td>60.6K</td><td>64.7K</td><td>395.3K</td><td>160</td><td>1,620</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>60.5K</td><td>57.4K</td><td>59.8K</td><td>60.6K</td><td>64.7K</td><td>395K</td><td>160</td><td>1,620</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 826.7857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -9522,7 +9530,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         6
@@ -9587,7 +9595,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -9824,7 +9832,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>76.1K</td><td>80.4K</td><td>174.4K</td><td>109.6K</td><td>85.4K</td><td>133.1K</td><td>659.0K</td><td>150</td><td>32.9M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
+</div></div></td><td>76.1K</td><td>80.4K</td><td>174K</td><td>110K</td><td>85.4K</td><td>133K</td><td>659K</td><td>150</td><td>32.9M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -9867,7 +9875,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -10026,7 +10034,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1KJf4VmMRvAVmU2JrN05CZSvu-3BDUvUE"></div>
 </div>
-</div></div></td><td>90.2K</td><td>63.8K</td><td>148.2K</td><td>160.3K</td><td>94.8K</td><td>136.3K</td><td>693.6K</td><td>150</td><td>21.1M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
+</div></div></td><td>90.2K</td><td>63.8K</td><td>148K</td><td>160K</td><td>94.8K</td><td>136K</td><td>694K</td><td>150</td><td>21.1M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -10306,7 +10314,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>90.2K</td><td>114.4K</td><td>96.9K</td><td>142.1K</td><td>109.5K</td><td>112.7K</td><td>665.8K</td><td>150</td><td>691.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
+</div></div></td><td>90.2K</td><td>114K</td><td>96.9K</td><td>142K</td><td>109K</td><td>113K</td><td>666K</td><td>150</td><td>692K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -10586,7 +10594,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1COqCSRmerV4Xqi1d1QxljeQy4DtYLjbD"></div>
 </div>
-</div></div></td><td>90.2K</td><td>88.7K</td><td>60.7K</td><td>59.5K</td><td>68.0K</td><td>63.3K</td><td>430.4K</td><td>150</td><td>1.1M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
+</div></div></td><td>90.2K</td><td>88.7K</td><td>60.7K</td><td>59.5K</td><td>68K</td><td>63.3K</td><td>430K</td><td>150</td><td>1.05M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -10865,7 +10873,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>90.2K</td><td>55.0K</td><td>56.7K</td><td>56.2K</td><td>50.0K</td><td>57.6K</td><td>365.6K</td><td>150</td><td>63.9K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
+</div></div></td><td>90.2K</td><td>55K</td><td>56.7K</td><td>56.2K</td><td>50K</td><td>57.6K</td><td>366K</td><td>150</td><td>63.9K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -11145,7 +11153,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>90.2K</td><td>40.3K</td><td>38.2K</td><td>48.8K</td><td>45.0K</td><td>47.2K</td><td>309.8K</td><td>150</td><td>19.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
+</div></div></td><td>90.2K</td><td>40.3K</td><td>38.2K</td><td>48.8K</td><td>45K</td><td>47.2K</td><td>310K</td><td>150</td><td>19.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 671.4285714285714px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -11425,7 +11433,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1COqCSRmerV4Xqi1d1QxljeQy4DtYLjbD"></div>
 </div>
-</div></div></td><td>88.3K</td><td>54.3K</td><td>48.6K</td><td>53.5K</td><td>55.9K</td><td>54.6K</td><td>355.2K</td><td>150</td><td>102.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
+</div></div></td><td>88.3K</td><td>54.3K</td><td>48.6K</td><td>53.5K</td><td>55.9K</td><td>54.6K</td><td>355K</td><td>150</td><td>102K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -11627,7 +11635,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1XEAUmBz9ts0mV0gTNuJOa1sPDZyImllt"></div>
 </div>
-</div></div></td><td>88.3K</td><td>44.5K</td><td>43.1K</td><td>43.3K</td><td>42.5K</td><td>49.1K</td><td>310.9K</td><td>150</td><td>4,314</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
+</div></div></td><td>88.3K</td><td>44.5K</td><td>43.1K</td><td>43.3K</td><td>42.5K</td><td>49.1K</td><td>311K</td><td>150</td><td>4,314</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -11829,7 +11837,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>88.3K</td><td>69.7K</td><td>80.0K</td><td>69.1K</td><td>57.8K</td><td>65.9K</td><td>430.8K</td><td>150</td><td>42.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
+</div></div></td><td>88.3K</td><td>69.7K</td><td>80K</td><td>69.1K</td><td>57.8K</td><td>65.9K</td><td>431K</td><td>150</td><td>42.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -12031,7 +12039,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/19izPwNZTgerQQzETWNmT3tC_0n_0JE-s"></div>
 </div>
-</div></div></td><td>88.3K</td><td>142.1K</td><td>97.9K</td><td>152.9K</td><td>106.5K</td><td>134.2K</td><td>721.9K</td><td>150</td><td>426.0K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
+</div></div></td><td>88.3K</td><td>142K</td><td>97.9K</td><td>153K</td><td>107K</td><td>134K</td><td>722K</td><td>150</td><td>426K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -12233,7 +12241,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>88.3K</td><td>149.8K</td><td>129.2K</td><td>129.4K</td><td>148.8K</td><td>169.6K</td><td>815.1K</td><td>150</td><td>3.1M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
+</div></div></td><td>88.3K</td><td>150K</td><td>129K</td><td>129K</td><td>149K</td><td>170K</td><td>815K</td><td>150</td><td>3.12M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 360.7142857142857px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -12435,7 +12443,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>159.9K</td><td>150.5K</td><td>156.4K</td><td>152.2K</td><td>152.4K</td><td>154.4K</td><td>925.7K</td><td>150</td><td>2.3M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
+</div></div></td><td>160K</td><td>151K</td><td>156K</td><td>152K</td><td>152K</td><td>154K</td><td>926K</td><td>150</td><td>2.27M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -12572,7 +12580,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>159.9K</td><td>79.2K</td><td>63.5K</td><td>61.6K</td><td>61.5K</td><td>80.6K</td><td>506.3K</td><td>150</td><td>38.9K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
+</div></div></td><td>160K</td><td>79.2K</td><td>63.5K</td><td>61.6K</td><td>61.5K</td><td>80.6K</td><td>506K</td><td>150</td><td>38.9K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -12709,7 +12717,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>161.5K</td><td>54.1K</td><td>49.4K</td><td>42.8K</td><td>58.7K</td><td>55.9K</td><td>422.4K</td><td>160</td><td>6,122</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
+</div></div></td><td>161K</td><td>54.1K</td><td>49.4K</td><td>42.8K</td><td>58.7K</td><td>55.9K</td><td>422K</td><td>160</td><td>6,122</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -12845,7 +12853,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1KJf4VmMRvAVmU2JrN05CZSvu-3BDUvUE"></div>
 </div>
-</div></div></td><td>161.5K</td><td>60.2K</td><td>44.4K</td><td>49.7K</td><td>51.2K</td><td>49.3K</td><td>416.4K</td><td>160</td><td>941</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
+</div></div></td><td>161K</td><td>60.2K</td><td>44.4K</td><td>49.7K</td><td>51.2K</td><td>49.3K</td><td>416K</td><td>160</td><td>941</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -12982,7 +12990,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>161.5K</td><td>41.6K</td><td>53.5K</td><td>46.1K</td><td>43.9K</td><td>49.3K</td><td>396.0K</td><td>160</td><td>1,277</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
+</div></div></td><td>161K</td><td>41.6K</td><td>53.5K</td><td>46.1K</td><td>43.9K</td><td>49.3K</td><td>396K</td><td>160</td><td>1,277</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 101.78571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -13118,7 +13126,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1HqY455D-dUWgeF8xMy9UMPyVRn_QSwhJ"></div>
 </div>
-</div></div></td><td>119.5K</td><td>142.8K</td><td>164.6K</td><td>194.3K</td><td>170.4K</td><td>186.4K</td><td>978.0K</td><td>150</td><td>27.2M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>120K</td><td>143K</td><td>165K</td><td>194K</td><td>170K</td><td>186K</td><td>978K</td><td>150</td><td>27.2M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -13345,7 +13353,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>119.5K</td><td>126.3K</td><td>123.9K</td><td>169.5K</td><td>167.1K</td><td>133.1K</td><td>839.3K</td><td>150</td><td>9.0M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>120K</td><td>126K</td><td>124K</td><td>169K</td><td>167K</td><td>133K</td><td>839K</td><td>150</td><td>9.01M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -13572,7 +13580,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>119.5K</td><td>119.5K</td><td>82.9K</td><td>88.0K</td><td>65.1K</td><td>60.0K</td><td>535.0K</td><td>150</td><td>5.9M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>120K</td><td>119K</td><td>82.9K</td><td>88K</td><td>65.1K</td><td>60K</td><td>535K</td><td>150</td><td>5.93M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -13798,7 +13806,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>119.5K</td><td>44.9K</td><td>47.6K</td><td>71.2K</td><td>71.1K</td><td>51.4K</td><td>405.8K</td><td>150</td><td>8,680</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>120K</td><td>44.9K</td><td>47.6K</td><td>71.2K</td><td>71.1K</td><td>51.4K</td><td>406K</td><td>150</td><td>8,680</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -14026,7 +14034,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>119.5K</td><td>57.9K</td><td>56.6K</td><td>56.2K</td><td>48.2K</td><td>50.4K</td><td>388.8K</td><td>150</td><td>661.1K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>120K</td><td>57.9K</td><td>56.6K</td><td>56.2K</td><td>48.2K</td><td>50.4K</td><td>389K</td><td>150</td><td>661K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -14251,7 +14259,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>116.2K</td><td>15.5K</td><td>15.7K</td><td>18.2K</td><td>23.1K</td><td>19.5K</td><td>208.3K</td><td>150</td><td>981.5K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>116K</td><td>15.5K</td><td>15.7K</td><td>18.2K</td><td>23.1K</td><td>19.5K</td><td>208K</td><td>150</td><td>981K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>EmmiSant</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -14359,7 +14367,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>116.2K</td><td>28.2K</td><td>21.1K</td><td>24.3K</td><td>23.4K</td><td>27.0K</td><td>240.1K</td><td>150</td><td>1,613</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>116K</td><td>28.2K</td><td>21.1K</td><td>24.3K</td><td>23.4K</td><td>27K</td><td>240K</td><td>150</td><td>1,613</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>EmmiSant</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -14467,7 +14475,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/1ILItW3IlYk6dYBcwcs3FhLrvBHg3e8dA">
       </div>
 </div>
-</div></div></td><td>116.2K</td><td>37.3K</td><td>29.2K</td><td>34.0K</td><td>33.0K</td><td>27.9K</td><td>277.6K</td><td>150</td><td>14.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>116K</td><td>37.3K</td><td>29.2K</td><td>34K</td><td>33K</td><td>27.9K</td><td>278K</td><td>150</td><td>14.7K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>EmmiSant</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -14574,7 +14582,7 @@
           <img src="https://lh3.googleusercontent.com/u/0/d/16-DVjNpz-2wYmvppUTmWjCf2udP1RKtF">
       </div>
 </div>
-</div></div></td><td>116.2K</td><td>46.4K</td><td>55.3K</td><td>53.9K</td><td>40.1K</td><td>47.4K</td><td>359.3K</td><td>150</td><td>779.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>116K</td><td>46.4K</td><td>55.3K</td><td>53.9K</td><td>40.1K</td><td>47.4K</td><td>359K</td><td>150</td><td>780K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>EmmiSant</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -14682,7 +14690,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>116.2K</td><td>85.1K</td><td>67.9K</td><td>73.6K</td><td>156.4K</td><td>111.6K</td><td>610.9K</td><td>150</td><td>1.9M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>116K</td><td>85.1K</td><td>67.9K</td><td>73.6K</td><td>156K</td><td>112K</td><td>611K</td><td>150</td><td>1.92M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>Reikachan</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -14793,7 +14801,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1KJf4VmMRvAVmU2JrN05CZSvu-3BDUvUE"></div>
 </div>
-</div></div></td><td>104.2K</td><td>114.2K</td><td>161.1K</td><td>121.2K</td><td>158.2K</td><td>185.9K</td><td>844.8K</td><td>150</td><td>1.6M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>104K</td><td>114K</td><td>161K</td><td>121K</td><td>158K</td><td>186K</td><td>845K</td><td>150</td><td>1.65M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>Reikachan</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -14903,7 +14911,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1COqCSRmerV4Xqi1d1QxljeQy4DtYLjbD"></div>
 </div>
-</div></div></td><td>104.2K</td><td>60.6K</td><td>75.7K</td><td>74.2K</td><td>148.5K</td><td>98.2K</td><td>561.5K</td><td>150</td><td>76.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>104K</td><td>60.6K</td><td>75.7K</td><td>74.2K</td><td>148K</td><td>98.2K</td><td>561K</td><td>150</td><td>76.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>Reikachan</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -15014,7 +15022,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1KJf4VmMRvAVmU2JrN05CZSvu-3BDUvUE"></div>
 </div>
-</div></div></td><td>104.2K</td><td>126.7K</td><td>60.2K</td><td>68.4K</td><td>57.5K</td><td>59.0K</td><td>476.0K</td><td>150</td><td>21.1K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>104K</td><td>127K</td><td>60.2K</td><td>68.4K</td><td>57.5K</td><td>59K</td><td>476K</td><td>150</td><td>21.1K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>Reikachan</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -15125,7 +15133,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>104.2K</td><td>49.8K</td><td>51.1K</td><td>42.2K</td><td>40.2K</td><td>54.8K</td><td>342.4K</td><td>150</td><td>688.5K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>104K</td><td>49.8K</td><td>51.1K</td><td>42.2K</td><td>40.2K</td><td>54.8K</td><td>342K</td><td>150</td><td>689K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>Reikachan</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -15236,7 +15244,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>104.2K</td><td>33.8K</td><td>28.8K</td><td>23.9K</td><td>19.2K</td><td>40.9K</td><td>250.9K</td><td>150</td><td>645</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
+</div></div></td><td>104K</td><td>33.8K</td><td>28.8K</td><td>23.9K</td><td>19.2K</td><td>40.9K</td><td>251K</td><td>150</td><td>645</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: -1.7857142857142858px; height: 50px;"></div>
 <div class="icon-container">
 </div></div></td></tr><tr><td>Mar</td><td><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -15347,7 +15355,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>92.3K</td><td>98.1K</td><td>163.3K</td><td>194.4K</td><td>134.3K</td><td>95.7K</td><td>778.0K</td><td>150</td><td>20.5M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>98.1K</td><td>163K</td><td>194K</td><td>134K</td><td>95.7K</td><td>778K</td><td>150</td><td>20.5M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -15429,7 +15437,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -15562,7 +15570,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>96.0K</td><td>54.8K</td><td>54.6K</td><td>76.6K</td><td>61.1K</td><td>58.5K</td><td>401.6K</td><td>150</td><td>319.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
+</div></div></td><td>96K</td><td>54.8K</td><td>54.6K</td><td>76.6K</td><td>61.1K</td><td>58.5K</td><td>402K</td><td>150</td><td>319K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -15644,7 +15652,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -15777,7 +15785,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1KJf4VmMRvAVmU2JrN05CZSvu-3BDUvUE"></div>
 </div>
-</div></div></td><td>92.3K</td><td>62.4K</td><td>107.5K</td><td>191.7K</td><td>101.8K</td><td>54.3K</td><td>609.9K</td><td>150</td><td>591.9K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>62.4K</td><td>107K</td><td>192K</td><td>102K</td><td>54.3K</td><td>610K</td><td>150</td><td>592K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -15859,7 +15867,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -15992,7 +16000,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>96.0K</td><td>60.1K</td><td>78.2K</td><td>72.8K</td><td>172.5K</td><td>78.4K</td><td>557.9K</td><td>150</td><td>270.0K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
+</div></div></td><td>96K</td><td>60.1K</td><td>78.2K</td><td>72.8K</td><td>172K</td><td>78.4K</td><td>558K</td><td>150</td><td>270K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -16074,7 +16082,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -16207,7 +16215,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>92.3K</td><td>64.1K</td><td>199.8K</td><td>85.5K</td><td>151.3K</td><td>81.0K</td><td>674.0K</td><td>150</td><td>799.5K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
+</div></div></td><td>92.3K</td><td>64.1K</td><td>200K</td><td>85.5K</td><td>151K</td><td>81K</td><td>674K</td><td>150</td><td>799K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 412.5px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -16289,7 +16297,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -16422,7 +16430,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>32.8K</td><td>51.2K</td><td>40.4K</td><td>43.7K</td><td>42.6K</td><td>37.8K</td><td>248.5K</td><td>160</td><td>1,075</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
+</div></div></td><td>32.8K</td><td>51.2K</td><td>40.4K</td><td>43.7K</td><td>42.6K</td><td>37.8K</td><td>249K</td><td>160</td><td>1,075</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -16546,7 +16554,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>31.6K</td><td>37.2K</td><td>44.6K</td><td>38.7K</td><td>37.7K</td><td>39.2K</td><td>229.0K</td><td>160</td><td>10.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
+</div></div></td><td>31.6K</td><td>37.2K</td><td>44.6K</td><td>38.7K</td><td>37.7K</td><td>39.2K</td><td>229K</td><td>160</td><td>10.2K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -16670,7 +16678,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1HqY455D-dUWgeF8xMy9UMPyVRn_QSwhJ"></div>
 </div>
-</div></div></td><td>39.4K</td><td>52.8K</td><td>44.8K</td><td>46.6K</td><td>38.0K</td><td>34.1K</td><td>255.8K</td><td>160</td><td>1,911</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
+</div></div></td><td>39.4K</td><td>52.8K</td><td>44.8K</td><td>46.6K</td><td>38K</td><td>34.1K</td><td>256K</td><td>160</td><td>1,911</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -16793,7 +16801,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>32.8K</td><td>40.4K</td><td>36.0K</td><td>35.5K</td><td>36.2K</td><td>36.6K</td><td>217.5K</td><td>160</td><td>37.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
+</div></div></td><td>32.8K</td><td>40.4K</td><td>36K</td><td>35.5K</td><td>36.2K</td><td>36.6K</td><td>217K</td><td>160</td><td>37.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -16917,7 +16925,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1KJf4VmMRvAVmU2JrN05CZSvu-3BDUvUE"></div>
 </div>
-</div></div></td><td>32.8K</td><td>37.6K</td><td>34.1K</td><td>35.7K</td><td>53.3K</td><td>35.6K</td><td>229.1K</td><td>160</td><td>902</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
+</div></div></td><td>32.8K</td><td>37.6K</td><td>34.1K</td><td>35.7K</td><td>53.3K</td><td>35.6K</td><td>229K</td><td>160</td><td>902</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 50px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -17041,7 +17049,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>80.7K</td><td>65.7K</td><td>169.8K</td><td>145.1K</td><td>93.4K</td><td>98.6K</td><td>653.3K</td><td>150</td><td>19.6M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>80.7K</td><td>65.7K</td><td>170K</td><td>145K</td><td>93.4K</td><td>98.6K</td><td>653K</td><td>150</td><td>19.6M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -17097,7 +17105,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -17269,7 +17277,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>95.2K</td><td>82.8K</td><td>71.0K</td><td>65.1K</td><td>74.5K</td><td>87.0K</td><td>475.5K</td><td>150</td><td>2.1M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>95.2K</td><td>82.8K</td><td>71K</td><td>65.1K</td><td>74.5K</td><td>87K</td><td>476K</td><td>150</td><td>2.13M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -17325,7 +17333,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -17497,7 +17505,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>95.2K</td><td>23.2K</td><td>78.7K</td><td>53.0K</td><td>97.9K</td><td>146.3K</td><td>494.3K</td><td>150</td><td>99.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>95.2K</td><td>23.2K</td><td>78.7K</td><td>53K</td><td>97.9K</td><td>146K</td><td>494K</td><td>150</td><td>99.4K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -17553,7 +17561,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -17725,7 +17733,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1COqCSRmerV4Xqi1d1QxljeQy4DtYLjbD"></div>
 </div>
-</div></div></td><td>80.7K</td><td>31.7K</td><td>41.0K</td><td>56.7K</td><td>27.1K</td><td>54.7K</td><td>291.8K</td><td>150</td><td>2,209</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>80.7K</td><td>31.7K</td><td>41K</td><td>56.7K</td><td>27.1K</td><td>54.7K</td><td>292K</td><td>150</td><td>2,209</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -17781,7 +17789,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -17953,7 +17961,7 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>95.2K</td><td>22.4K</td><td>24.2K</td><td>17.2K</td><td>37.4K</td><td>21.9K</td><td>218.3K</td><td>150</td><td>18.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
+</div></div></td><td>95.2K</td><td>22.4K</td><td>24.2K</td><td>17.2K</td><td>37.4K</td><td>21.9K</td><td>218K</td><td>150</td><td>18.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 464.2857142857143px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
@@ -18009,7 +18017,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -18180,11 +18188,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>93.3K</td><td>58.0K</td><td>115.3K</td><td>188.7K</td><td>129.5K</td><td>112.4K</td><td>697.2K</td><td>150</td><td>86.8M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
+</div></div></td><td>93.3K</td><td>58K</td><td>115K</td><td>189K</td><td>129K</td><td>112K</td><td>697K</td><td>150</td><td>86.8M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         15
@@ -18340,7 +18348,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -18485,11 +18493,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>93.3K</td><td>179.6K</td><td>150.3K</td><td>196.3K</td><td>103.2K</td><td>163.5K</td><td>886.3K</td><td>150</td><td>18.5M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
+</div></div></td><td>93.3K</td><td>180K</td><td>150K</td><td>196K</td><td>103K</td><td>164K</td><td>886K</td><td>150</td><td>18.5M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         15
@@ -18645,7 +18653,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -18791,11 +18799,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>93.3K</td><td>69.0K</td><td>85.0K</td><td>69.4K</td><td>193.7K</td><td>182.3K</td><td>692.7K</td><td>150</td><td>1.8M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
+</div></div></td><td>93.3K</td><td>69K</td><td>85K</td><td>69.4K</td><td>194K</td><td>182K</td><td>693K</td><td>150</td><td>1.79M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         15
@@ -18951,7 +18959,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -19096,11 +19104,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1HqY455D-dUWgeF8xMy9UMPyVRn_QSwhJ"></div>
 </div>
-</div></div></td><td>93.3K</td><td>95.6K</td><td>65.2K</td><td>73.4K</td><td>78.4K</td><td>82.3K</td><td>488.3K</td><td>150</td><td>500.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
+</div></div></td><td>93.3K</td><td>95.6K</td><td>65.2K</td><td>73.4K</td><td>78.4K</td><td>82.3K</td><td>488K</td><td>150</td><td>501K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         15
@@ -19256,7 +19264,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -19401,11 +19409,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>93.3K</td><td>74.9K</td><td>67.4K</td><td>56.4K</td><td>48.3K</td><td>56.8K</td><td>397.1K</td><td>150</td><td>254.1K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
+</div></div></td><td>93.3K</td><td>74.9K</td><td>67.4K</td><td>56.4K</td><td>48.3K</td><td>56.8K</td><td>397K</td><td>150</td><td>254K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 775px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         15
@@ -19561,7 +19569,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -19707,11 +19715,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1rg3zFR-kbBJF8v8RffcJGyIIvXZUDdib"></div>
 </div>
-</div></div></td><td>181.9K</td><td>153.5K</td><td>138.0K</td><td>117.3K</td><td>106.9K</td><td>88.8K</td><td>786.5K</td><td>150</td><td>1.1M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
+</div></div></td><td>182K</td><td>154K</td><td>138K</td><td>117K</td><td>107K</td><td>88.8K</td><td>787K</td><td>150</td><td>1.12M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -19802,7 +19810,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -20052,11 +20060,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1HqY455D-dUWgeF8xMy9UMPyVRn_QSwhJ"></div>
 </div>
-</div></div></td><td>181.9K</td><td>72.9K</td><td>95.9K</td><td>72.8K</td><td>113.6K</td><td>174.3K</td><td>711.4K</td><td>150</td><td>514.6K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
+</div></div></td><td>182K</td><td>72.9K</td><td>95.9K</td><td>72.8K</td><td>114K</td><td>174K</td><td>711K</td><td>150</td><td>515K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -20147,7 +20155,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -20397,11 +20405,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1nwYGGeEatUiCq1LbP_DsfblZ-aEknldL"></div>
 </div>
-</div></div></td><td>181.9K</td><td>98.6K</td><td>103.8K</td><td>110.9K</td><td>147.7K</td><td>139.4K</td><td>782.4K</td><td>150</td><td>2.1M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
+</div></div></td><td>182K</td><td>98.6K</td><td>104K</td><td>111K</td><td>148K</td><td>139K</td><td>782K</td><td>150</td><td>2.15M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -20492,7 +20500,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -20742,11 +20750,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>181.9K</td><td>88.4K</td><td>126.3K</td><td>162.9K</td><td>98.7K</td><td>123.6K</td><td>781.9K</td><td>150</td><td>581.8K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
+</div></div></td><td>182K</td><td>88.4K</td><td>126K</td><td>163K</td><td>98.7K</td><td>124K</td><td>782K</td><td>150</td><td>582K</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -20837,7 +20845,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -21087,11 +21095,11 @@
       </div>
 <div class="layer layer-patron"><img src="https://lh3.googleusercontent.com/u/0/d/1tb3vPB_ZVASNOZCY-eayGgrtkHXqd3n1"></div>
 </div>
-</div></div></td><td>181.9K</td><td>64.1K</td><td>132.2K</td><td>144.1K</td><td>166.6K</td><td>124.9K</td><td>813.8K</td><td>150</td><td>4.2M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
+</div></div></td><td>182K</td><td>64.1K</td><td>132K</td><td>144K</td><td>167K</td><td>125K</td><td>814K</td><td>150</td><td>4.16M</td><td class="aux-col left-align"><div class="wrapper"><div class="layout-spacer" style="width: 930.3571428571429px; height: 50px;"></div>
 <div class="icon-container">
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -560px -280px;">
+        <img style="background-position: -560px -224px;">
       </div>
       <div class="layer layer-buff-value">
         3
@@ -21182,7 +21190,7 @@
     </div>
 <div class="buff-icon">
       <div class="layer layer-buff-icon">
-        <img style="background-position: -280px -112px;">
+        <img style="background-position: -112px -280px;">
       </div>
       <div class="layer layer-buff-value">
         10
@@ -21326,7 +21334,6 @@
 </div></div></td></tr>        </tbody>
                       </table>
 
-      
     </div>
   </div>
 
@@ -21710,5 +21717,5 @@
       doNext();
     });
   </script>
-</body>
-</html>
+
+</body></html>
