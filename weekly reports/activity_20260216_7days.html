@@ -429,7 +429,7 @@
               <div class="control-group">
           <label for="show-eval" title="Show or hide the column containing evaluation and rewards.">Show Evaluation</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="show-eval" onchange="toggleTableOption('hide-aux', !this.checked )">
+            <input type="checkbox" id="show-eval" onchange="toggleTableOption('hide-aux', this.checked )">
             <span class="slider"></span>
           </label>
         </div>
@@ -595,7 +595,7 @@
         saveViewerParam('showEval', show);
 
                 if (!fromTableOption) {
-            document.getElementById('show-eval').classList.toggle('hide-aux', !show);
+            document.getElementById('show-eval').checked = show;
           }
             }
 
