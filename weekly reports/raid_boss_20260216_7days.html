@@ -21682,7 +21682,7 @@
       const reportDataTable = reportData.querySelector('table');
       reportDataTable.addEventListener('mouseenter', (e) => {
         if (e.target.classList.contains('buff-icon')) {
-          const tooltip = icon.children[2];
+          const tooltip = e.target.children[2];
            
           if (!tooltip) return;
 
