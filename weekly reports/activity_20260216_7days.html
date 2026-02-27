@@ -429,7 +429,7 @@
               <div class="control-group">
           <label for="show-eval" title="Show or hide the column containing evaluation and rewards.">Show Evaluation</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="show-eval" zautoescz="" onchange="toggleTableOption('hide-aux', '!'this.checked )">
+            <input type="checkbox" id="show-eval" onchange="toggleTableOption('hide-aux', !this.checked )">
             <span class="slider"></span>
           </label>
         </div>
@@ -550,7 +550,7 @@
             [unit[uidx], matches[i]] = [1000000000000, ''];
           else if (str === '%')
             [unit[uidx], matches[i]] = [1, ''];
-        })
+        });
         if (idx === -1)
           return parseNullable(matches.slice(1).join(''), unit[0]);
         return [parseNullable(matches.slice(1, idx).join(''), unit[0]), parseNullable(matches.slice(idx + 1).join(''), unit[1])];
@@ -595,7 +595,7 @@
         saveViewerParam('showEval', show);
 
                 if (!fromTableOption) {
-            document.getElementById('show-eval').classList.toggle(cls, !show);
+            document.getElementById('show-eval').classList.toggle('hide-aux', !show);
           }
             }
 
