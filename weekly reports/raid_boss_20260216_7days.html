@@ -690,7 +690,7 @@
               <div class="control-group">
           <label for="show-buffs" title="Show or hide the column containing used buffs.">Show Buffs</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="show-buffs" onchange="toggleTableOption('hide-aux', !this.checked )">
+            <input type="checkbox" id="show-buffs" onchange="toggleTableOption('hide-aux', this.checked )">
             <span class="slider"></span>
           </label>
         </div>
@@ -21573,7 +21573,7 @@
         saveViewerParam('showEval', show);
 
                 if (!fromTableOption) {
-            document.getElementById('show-buffs').classList.toggle('hide-aux', !show);
+            document.getElementById('show-buffs').checked = show;
           }
             }
 
