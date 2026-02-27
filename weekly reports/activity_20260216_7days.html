@@ -425,6 +425,15 @@
       </details>
     </div>
 
+          <div class="controls">
+              <div class="control-group">
+          <label for="show-eval" title="Show or hide the column containing evaluation and rewards.">Show Evaluation</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="show-eval" zautoescz="" onchange="toggleTableOption('hide-aux', '!'this.checked )">
+            <span class="slider"></span>
+          </label>
+        </div>
+            </div>
     
     <div id="reportData" class="report-data hide-aux">
 
@@ -573,35 +582,39 @@
       return compval(va, vb, isAsc);
     }
 
-    function toggleEvaluation(force = null, saveParam = false) {
+    function toggleEvaluation(force = null, saveParam = false, fromTableOption) {
       let show;
       if (force == null)
         show = !showAux;
       else
         show = force;
 
-      if (show)
-        reportData.classList.remove('hide-aux');
-      else
-        reportData.classList.add('hide-aux');
-
+      reportData.classList.toggle('hide-aux', !show);
       showAux = show;
       if (saveParam)
         saveViewerParam('showEval', show);
-    }
 
-    function toggleAux() {
+                if (!fromTableOption) {
+            document.getElementById('show-eval').classList.toggle(cls, !show);
+          }
+            }
+
+    function toggleAux(force, fromTableOption) {
       if (window.parent && window.parent !== window && typeof window.parent.toggleEvaluation === 'function') {
-          
-          window.parent.toggleEvaluation(!showAux, true);
-        } else {
-          
-          toggleEvaluation(null, true);
-        }
+        
+        window.parent.toggleEvaluation(force ?? !showAux, true);
+      } else {
+        
+        toggleEvaluation(force, true, fromTableOption);
+      }
     }
 
-    function toggleTableOption(cls) {
-      reportData.classList.toggle(cls);
+    function toggleTableOption(cls, force) {
+      reportData.classList.toggle(cls, force);
+      if (cls === 'hide-aux') {
+        toggleAux(force, true);
+        return;
+      }
     }
 
     const searchCommandRegex = /^@(\w*)(<=|>=|<>|<|>|=)([^<>=].*)$/;
