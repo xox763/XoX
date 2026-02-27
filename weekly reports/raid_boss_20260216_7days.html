@@ -21682,7 +21682,8 @@
       const reportDataTable = reportData.querySelector('table');
       reportDataTable.addEventListener('mouseenter', (e) => {
         if (e.target.classList.contains('buff-icon')) {
-          const tooltip = e.target.querySelector('.buff-tooltip');
+          const tooltip = icon.children[2];
+           
           if (!tooltip) return;
 
           tooltip.style.transform = 'translateX(-50%)';
@@ -21705,7 +21706,7 @@
             }
           }
         }
-      }, true);
+      }, { capture: true, passive: true });
 
       const params = loadAndUpdateFormParams(config.viewerParamsName);
       docParams.showEval ??= params.showEval ?? null;
