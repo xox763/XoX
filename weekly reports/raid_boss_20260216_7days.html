@@ -21685,6 +21685,7 @@
           const tooltip = e.target.querySelector('.buff-tooltip');
           if (!tooltip) return;
 
+          tooltip.style.transform = 'translateX(-50%)';
           const tooltipRect = tooltip.getBoundingClientRect();
           const tableRect = reportDataTable.getBoundingClientRect();
 
