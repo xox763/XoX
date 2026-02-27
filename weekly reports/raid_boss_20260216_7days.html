@@ -21692,13 +21692,13 @@
           const overflowRight = tooltipRect.right - tableRect.right;
           if (overflowRight > 0) {
              
-            const adjustment = overflowRight + 5; 
+            const adjustment = overflowRight + 10; 
             tooltip.style.transform = `translateX(calc(-50% - ${adjustment}px))`;
           } else {
             const overflowLeft = tableRect.left - tooltipRect.left;
             if (overflowLeft > 0) {
                
-              const adjustment = overflowLeft + 5; 
+              const adjustment = overflowLeft + 10; 
               tooltip.style.transform = `translateX(calc(-50% + ${adjustment}px))`;
             } else {
               tooltip.style.transform = 'translateX(-50%)';
