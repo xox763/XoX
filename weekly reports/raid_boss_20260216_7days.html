@@ -683,14 +683,14 @@
               <div class="control-group">
           <label for="group-by-name" title="Group the report data by participant name.">Group By Name</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="group-by-name" zautoescz="" onchange="toggleTableOption('group-by', ''this.checked )">
+            <input type="checkbox" id="group-by-name" onchange="toggleTableOption('group-by', this.checked )">
             <span class="slider"></span>
           </label>
         </div>
               <div class="control-group">
           <label for="show-buffs" title="Show or hide the column containing used buffs.">Show Buffs</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="show-buffs" zautoescz="" onchange="toggleTableOption('hide-aux', '!'this.checked )">
+            <input type="checkbox" id="show-buffs" onchange="toggleTableOption('hide-aux', !this.checked )">
             <span class="slider"></span>
           </label>
         </div>
@@ -21528,7 +21528,7 @@
             [unit[uidx], matches[i]] = [1000000000000, ''];
           else if (str === '%')
             [unit[uidx], matches[i]] = [1, ''];
-        })
+        });
         if (idx === -1)
           return parseNullable(matches.slice(1).join(''), unit[0]);
         return [parseNullable(matches.slice(1, idx).join(''), unit[0]), parseNullable(matches.slice(idx + 1).join(''), unit[1])];
@@ -21573,7 +21573,7 @@
         saveViewerParam('showEval', show);
 
                 if (!fromTableOption) {
-            document.getElementById('show-buffs').classList.toggle(cls, !show);
+            document.getElementById('show-buffs').classList.toggle('hide-aux', !show);
           }
             }
 
