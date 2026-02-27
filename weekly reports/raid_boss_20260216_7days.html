@@ -613,7 +613,7 @@
 }
   </style>
   </head>
-<body>
+<body data-new-gr-c-s-check-loaded="14.1132.0" data-gr-ext-installed="">
   <script>
     function doNext() {}
   </script>
@@ -683,14 +683,14 @@
               <div class="control-group">
           <label for="group-by-name" title="Group the report data by participant name.">Group By Name</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="group-by-name" zautoescz="" onchange="toggleTableOption('group-by')">
+            <input type="checkbox" id="group-by-name" zautoescz="" onchange="toggleTableOption('group-by', !this.checked)">
             <span class="slider"></span>
           </label>
         </div>
               <div class="control-group">
           <label for="hide-buffs" title="Show or hide the column containing used buffs.">Hide Buffs</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="hide-buffs" checked="" onchange="toggleTableOption('hide-aux')">
+            <input type="checkbox" id="hide-buffs" checked="" onchange="toggleTableOption('hide-aux', !this.checked)">
             <span class="slider"></span>
           </label>
         </div>
@@ -21577,18 +21577,22 @@
         saveViewerParam('showEval', show);
     }
 
-    function toggleAux() {
+    function toggleAux(force) {
       if (window.parent && window.parent !== window && typeof window.parent.toggleEvaluation === 'function') {
-          
-          window.parent.toggleEvaluation(!showAux, true);
-        } else {
-          
-          toggleEvaluation(null, true);
-        }
+        
+        window.parent.toggleEvaluation(force ?? !showAux, true);
+      } else {
+        
+        toggleEvaluation(null, true);
+      }
     }
 
-    function toggleTableOption(cls) {
-      reportData.classList.toggle(cls);
+    function toggleTableOption(cls, force) {
+      if (cls === 'hide-aux') {
+        toggleAux(force);
+        return;
+      }
+      reportData.classList.toggle(cls, force);
     }
 
     const searchCommandRegex = /^@(\w*)(<=|>=|<>|<|>|=)([^<>=].*)$/;
