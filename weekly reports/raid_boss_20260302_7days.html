@@ -21725,15 +21725,17 @@
       return true;
     }
 
+    let dataHeaders = null;
     let sortableHeaders = null;
 
-    function findHeader(columnSpec) {
+    function findHeader(columnSpec, sortableOnly = false) {
       
+      const headers = sortableOnly ? sortableHeaders : dataHeaders;
       let header = null;
       let searchTerm = null;
       if (!isNaN(columnSpec)) {
         searchTerm = columnSpec.toString();
-        header = sortableHeaders.find(th => 
+        header = headers.find(th => 
           th.dataset.column === searchTerm
         );
         if (header) return header;
@@ -21742,7 +21744,7 @@
       }
 
       
-      return sortableHeaders.reduce((prev, th) => {
+      return headers.reduce((prev, th) => {
         const headerName = th.textContent.trim().toLowerCase();
         if (headerName.startsWith(searchTerm)) {
           if (!prev || headerName.length < prev[1].length)
@@ -21755,7 +21757,7 @@
     function sort(header, order = null, saveParam = false) {
       if (!sortableHeaders) return;
       if (!(header instanceof HTMLElement)) {
-        header = findHeader(header);
+        header = findHeader(header, true);
         if (!header) return;
       }
 
@@ -21815,6 +21817,7 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
+      dataHeaders = [...reportData.querySelectorAll('table > thead > tr > th[data-column]')];
       sortableHeaders = [...reportData.querySelectorAll('table > thead > tr > th[data-sortable]')];
 
       sortableHeaders.forEach(header => {
