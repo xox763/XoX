@@ -21661,8 +21661,8 @@
       } else {
         if (searchKeyword) {
           if (searchKeyword.startsWith('@')) return; 
-          columnIndex = 0;
-          operator = v => v.toLowerCase().includes(term);
+          
+          operator = v => v.includes(term);
         }
       }
 
@@ -21692,7 +21692,7 @@
           });
         } else {
           const cell = row.cells[columnIndex];
-          let value = searchCache.has(cell);
+          let value;
           if (searchCache.has(cell)) {
             value = searchCache.get(cell);
           } else {
