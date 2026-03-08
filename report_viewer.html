@@ -138,6 +138,9 @@
       min-width: 200px;
       transition: border-color 0.2s;
     }
+    .search-input .bad_input {
+      border-color: #e74c3c;
+    }
 
     .search-input:focus {
       outline: none;
@@ -605,8 +608,10 @@
         if (forwarded) {
           searchFilter.value = searchKeyword;
         }
-        if (documentFrame && documentFrame.contentWindow && typeof documentFrame.contentWindow.applySearchFilter === 'function')
-          documentFrame.contentWindow.applySearchFilter(searchKeyword, forwarded);
+        if (documentFrame && documentFrame.contentWindow && typeof documentFrame.contentWindow.applySearchFilter === 'function') {
+          const result = documentFrame.contentWindow.applySearchFilter(searchKeyword, forwarded);
+          searchFilter.classList.toggle('bad_input', result === false);
+        }
       } catch (err) {
         console.error("Access denied or function not found:", err);
       }
