@@ -144,7 +144,7 @@
       border-color: #3498db;
     }
 
-    .search-input.bad_input {
+    .search-input.bad-input {
       border-color: #e74c3c;
     }
 
@@ -611,7 +611,7 @@
         }
         if (documentFrame && documentFrame.contentWindow && typeof documentFrame.contentWindow.applySearchFilter === 'function') {
           const result = documentFrame.contentWindow.applySearchFilter(searchKeyword, forwarded);
-          searchFilter.classList.toggle('bad_input', result === false);
+          searchFilter.classList.toggle('bad-input', result === false);
         }
       } catch (err) {
         console.error("Access denied or function not found:", err);
