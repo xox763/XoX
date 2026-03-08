@@ -21691,17 +21691,18 @@
             return operator(value);
           });
         } else {
+          const cell = row.cells[columnIndex];
           let value = searchCache.has(cell);
           if (searchCache.has(cell)) {
             value = searchCache.get(cell);
           } else {
             if (colTypes[columnIndex] === 'numeric') {
-              value = parseValue(row.cells[columnIndex].textContent);
+              value = parseValue(cell.textContent);
               value = Array.isArray(value) ? value[0] : value;
             } else if (colTypes[columnIndex] === 'img-cont' && cell.dataset.desc) {
               value = cell.dataset.desc.toLowerCase();
             } else {
-              value = row.cells[columnIndex].textContent.toLowerCase();
+              value = cell.textContent.toLowerCase();
             }
             searchCache.set(cell, value);
           }
