@@ -21662,7 +21662,7 @@
         if (searchKeyword) {
           if (searchKeyword.startsWith('@')) return; 
           
-          operator = v => v.includes(term);
+          operator = v => String(v).includes(term);
         }
       }
 
