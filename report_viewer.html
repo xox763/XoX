@@ -312,27 +312,27 @@
           <div class="tooltip-section">
             <strong>Basic Search</strong><br>
             <div class="tooltip-indent">
-              • Searches the Name field (case-insensitive, partial match)
+              • Searches all fields (case-insensitive, partial match)
             </div>
           </div>
           <div class="tooltip-section">
             <strong>Conditional Search</strong><br>
             <div class="tooltip-indent">
-              • Format: <code>@[column]&lt;operator&gt;&lt;value&gt;</code><br>
-              • Column name can be abbreviated (e.g., "adv" for "Adventure")<br>
-              • Omit column to search all columns<br>
-              • Operators: <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, <code>&lt;&gt;</code><br>
-              • Logic: <code>&lt;&gt;</code> operator uses AND, others use OR<br>
-              • Note: <code>=</code> and <code>&lt;&gt;</code> operators are case-insensitive and require exact match
+              • Format: <code>@[column]&lt;operator&gt;&lt;value&gt;</code>.<br>
+              • <code>column</code> can be abbreviated (e.g., "adv" for "Adventure").<br>
+              • Omit <code>column</code> to search all columns.<br>
+              • Operators: <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, <code>&lt;&gt;</code>, <code>~</code>.<br>
+              • Logic: <code>&lt;&gt;</code> operator uses AND, others use OR.<br>
+              • Note: <code>=</code> and <code>&lt;&gt;</code> operators are case-insensitive and require exact match. If you want partial match, then use <code>~</code> operator.
             </div>
           </div>
           <div class="tooltip-section">
             <strong>Examples</strong><br>
             <div class="tooltip-indent">
-              • <code>@adv&gt;2</code> - Adventure participation count greater than 2<br>
-              • <code>@=0</code> - Any column equals 0<br>
-              • <code>@=-</code> - Any column with no value (shown as <code>-</code>)<br>
-              • <code>@&lt;&gt;-</code> - Every column is not empty (no <code>-</code> value)
+              • <code>@adv&gt;2</code> - Adventure participation count greater than 2.<br>
+              • <code>@=0</code> - Any column equals 0.<br>
+              • <code>@=-</code> - Any column with no value (shown as <code>-</code>).<br>
+              • <code>@&lt;&gt;-</code> - Every column is not empty (no <code>-</code> value).
             </div>
           </div>
           <div class="tooltip-note">
