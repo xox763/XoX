@@ -21605,7 +21605,7 @@
       }
     }
 
-    const searchCommandRegex = /^@([\w ]*)(<=|>=|<>|<|>|=|~)([^<>=].*)$/;
+    const searchCommandRegex = /^@([\w ]*)(<=|>=|<>|<|>|=|~)([^<>=~].*)$/;
     const colTypes = ["text","img-cont","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric","img-cont"];
     const searchCache = new WeakMap();
 
@@ -21620,18 +21620,18 @@
         const column = match[1].trim();
         if (column) {
           const header = findHeader(column);
-          if (header == null) return; 
+          if (header == null) return false; 
           columnIndex = parseInt(header.dataset.column);
         }
 
         const op = match[2];
         let operand = match[3].trim();
-        if (!operand) return; 
+        if (!operand) return false; 
         if (operand === '-') {
           operand = null;
         } else if (columnIndex != null && colTypes[columnIndex] === 'numeric') {
           if (isNaN(operand))
-            return; 
+            return false; 
           operand = Number(operand);
         }
         switch (op) {
@@ -21660,7 +21660,7 @@
         }
       } else {
         if (searchKeyword) {
-          if (searchKeyword.startsWith('@')) return; 
+          if (searchKeyword.startsWith('@')) return false; 
           
           operator = v => String(v).includes(term);
         }
@@ -21722,6 +21722,7 @@
       if (saveParam) {
         saveViewerParam('searchKeyword', searchKeyword);
       }
+      return true;
     }
 
     let sortableHeaders = null;
