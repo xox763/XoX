@@ -664,8 +664,13 @@
     });
 
     document.addEventListener('keydown', (e) => {
+      const activeElement = document.activeElement;
+      const isTyping = 
+        activeElement.tagName === 'INPUT' || 
+        activeElement.tagName === 'TEXTAREA' || 
+        activeElement.isContentEditable;
       // Ctrl/Cmd + K to focus search input
-      if (e.key === '/') {
+      if (e.key === '/' && !isTyping) {
         e.preventDefault();
         focusSearchFilter();
       }
