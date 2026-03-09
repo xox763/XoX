@@ -1,6 +1,6 @@
-<html><head>
-
-
+<!DOCTYPE html>
+<html>
+<head>
   <base target="_top">
   <meta charset="UTF-8">
   <style>
@@ -620,8 +620,6 @@
 
   
   
-
-  
     
 
   <div class="report-wrapper">
@@ -630,11 +628,11 @@
     </div>
 
     <div class="report-info">
-      <details id="dataOverview" class="slide-details" open="">
+      <details id="dataOverview" class="slide-details" open>
         <summary>Overview</summary>
         <div class="content">
           <table>
-                          <tbody><tr>
+                          <tr>
                 <td>Start Date</td>
                 <td>2026-03-02</td>
               </tr>
@@ -674,7 +672,7 @@
                 <td>Raid - Total Participants</td>
                 <td>20</td>
               </tr>
-                      </tbody></table>
+                      </table>
         </div>
       </details>
     </div>
@@ -683,14 +681,14 @@
               <div class="control-group">
           <label for="group-by-name" title="Group the report data by participant name.">Group By Name</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="group-by-name" onchange="toggleTableOption('group-by', this.checked )">
+            <input type="checkbox" id="group-by-name"  onchange="toggleTableOption('group-by', this.checked )">
             <span class="slider"></span>
           </label>
         </div>
               <div class="control-group">
           <label for="show-buffs" title="Show or hide the column containing used buffs.">Show Buffs</label>
           <label class="toggle-switch">
-            <input type="checkbox" id="show-buffs" onchange="toggleTableOption('hide-aux', this.checked )">
+            <input type="checkbox" id="show-buffs"  onchange="toggleTableOption('hide-aux', this.checked )">
             <span class="slider"></span>
           </label>
         </div>
@@ -700,7 +698,7 @@
 
       <table>
                 <thead>
-          <tr><th rowspan="2" data-type="text" data-column="0" data-sortable="true" class="sortable">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="img-cont" data-column="1" class="hide-on-group">Team Composition</th><th colspan="7" class="hide-on-group">Power</th><th colspan="4" class="hide-on-group">Result</th><th rowspan="2" data-type="img-cont" data-column="13" class="aux-col hide-on-group left-align">Buffs</th></tr><tr><th data-type="numeric" data-column="2" data-sortable="true" class="hide-on-group sortable">Pet <span class="sort-icon"></span></th><th data-type="numeric" data-column="3" data-sortable="true" class="hide-on-group sortable">H1 <span class="sort-icon"></span></th><th data-type="numeric" data-column="4" data-sortable="true" class="hide-on-group sortable">H2 <span class="sort-icon"></span></th><th data-type="numeric" data-column="5" data-sortable="true" class="hide-on-group sortable">H3 <span class="sort-icon"></span></th><th data-type="numeric" data-column="6" data-sortable="true" class="hide-on-group sortable">H4 <span class="sort-icon"></span></th><th data-type="numeric" data-column="7" data-sortable="true" class="hide-on-group sortable">H5 <span class="sort-icon"></span></th><th data-type="numeric" data-column="8" data-sortable="true" class="sortable">Team <span class="sort-icon"></span></th><th data-type="numeric" data-column="9" data-sortable="true" class="hide-on-group sortable">Boss Level <span class="sort-icon"></span></th><th data-type="numeric" data-column="10" data-sortable="true" class="sortable">Damage <span class="sort-icon"></span></th><th data-type="numeric" data-column="11" data-sortable="true" class="hide-on-group sortable">User&nbsp;% <span class="sort-icon"></span></th><th data-type="numeric" data-column="12" data-sortable="true" class="sortable">Total&nbsp;% <span class="sort-icon"></span></th></tr>        </thead>
+          <tr><th rowspan="2" data-type="text" data-column="0" data-sortable="true">Name <span class="sort-icon"></span></th><th rowspan="2" data-type="img-cont" data-column="1" class="hide-on-group">Team Composition</th><th colspan="7" class="hide-on-group">Power</th><th colspan="4" class="hide-on-group">Result</th><th rowspan="2" data-type="img-cont" data-column="13" class="aux-col hide-on-group left-align">Buffs</th></tr><tr><th data-type="numeric" data-column="2" data-sortable="true" class="hide-on-group">Pet <span class="sort-icon"></span></th><th data-type="numeric" data-column="3" data-sortable="true" class="hide-on-group">H1 <span class="sort-icon"></span></th><th data-type="numeric" data-column="4" data-sortable="true" class="hide-on-group">H2 <span class="sort-icon"></span></th><th data-type="numeric" data-column="5" data-sortable="true" class="hide-on-group">H3 <span class="sort-icon"></span></th><th data-type="numeric" data-column="6" data-sortable="true" class="hide-on-group">H4 <span class="sort-icon"></span></th><th data-type="numeric" data-column="7" data-sortable="true" class="hide-on-group">H5 <span class="sort-icon"></span></th><th data-type="numeric" data-column="8" data-sortable="true">Team <span class="sort-icon"></span></th><th data-type="numeric" data-column="9" data-sortable="true" class="hide-on-group">Boss Level <span class="sort-icon"></span></th><th data-type="numeric" data-column="10" data-sortable="true">Damage <span class="sort-icon"></span></th><th data-type="numeric" data-column="11" data-sortable="true" class="hide-on-group">User&nbsp;% <span class="sort-icon"></span></th><th data-type="numeric" data-column="12" data-sortable="true">Total&nbsp;% <span class="sort-icon"></span></th></tr>        </thead>
                         <tbody>
           <tr class="hide-on-group"><td>NauT</td><td data-desc="Axel, Thea, Augustus (Khorus), Orion (Axel), Sebastian, Dante (Cain)"><div class="wrapper"><div class="layout-spacer"></div>
 <div class="slot-container">
@@ -21875,5 +21873,5 @@
       doNext();
     });
   </script>
-
-</body></html>
+</body>
+</html>
