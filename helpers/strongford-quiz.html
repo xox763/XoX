@@ -69,7 +69,7 @@
     }
 
     tr.matched {
-      display: table-row;
+      display: table-row !important;
     }
     td {
       display: none;
@@ -823,18 +823,35 @@
       }
     });
 
-    // Add input event listener to filter table rows based on search query
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
+    const debounce = (func, delay) => {
+      let timeoutId;
+      return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          func.apply(null, args);
+        }, delay);
+      };
+    };
+
+    const doSearch = debounce(() => {
       document.querySelectorAll('tbody tr.matched').forEach(row => {
         row.classList.remove('matched');
       });
-      rows.forEach(row => {
-        const [tr, questionText] = row;
-        if (questionText.includes(query)) {
+      const query = searchInput.value.toLowerCase();
+      const queryWords = query.split(' ').filter(word => word.length > 1);
+      if (queryWords.length === 0) {
+        return;
+      }
+      rows.forEach(([tr, text]) => {
+        if (queryWords.every(word => text.includes(word))) {
           tr.classList.add('matched');
         }
       });
+    }, 500);
+
+    // Add input event listener to filter table rows based on search query
+    searchInput.addEventListener('input', () => {
+      doSearch();
     });
   </script>
 </body>
