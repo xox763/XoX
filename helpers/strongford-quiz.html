@@ -32,7 +32,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 600px;
       margin: 0px auto;
       padding: 30px;
       background-color: var(--bg-card);
@@ -802,8 +802,8 @@
 
   <script>
     const searchInput = document.getElementById('searchInput');
-    const rows = document.querySelectorAll('tbody tr').map(row => {
-      return [row, row.cells[0].textContent.toLowerCase()];
+    const rows = [...document.querySelectorAll('tbody tr')].map(tr => {
+      return [tr, tr.cells[0].textContent.toLowerCase()];
     });
 
     // Add event listeners to all table cells
@@ -817,6 +817,7 @@
     // Add keyboard event listener for '/' key to focus the search input
     document.addEventListener('keydown', (event) => {
       if (event.key === '/') {
+        event.preventDefault();
         searchInput.focus();
         searchInput.select();
       }
@@ -829,9 +830,9 @@
         row.classList.remove('matched');
       });
       rows.forEach(row => {
-        const [rowElement, questionText] = row;
+        const [tr, questionText] = row;
         if (questionText.includes(query)) {
-          rowElement.classList.add('matched');
+          tr.classList.add('matched');
         }
       });
     });
