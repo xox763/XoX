@@ -6,20 +6,22 @@
   <title>Guild Activity Reports</title>
   <style>
     :root {
-      --primary-color: #2c5282;
-      --primary-light: #4a90c5;
-      --primary-dark: #1a365d;
-      --accent-color: #5a9fd4;
-      --accent-light: #90c9f0;
-      --bg-primary: #f7fafc;
-      --bg-secondary: #edf2f7;
-      --bg-card: #ffffff;
-      --text-primary: #2d3748;
-      --text-secondary: #4a5568;
-      --text-muted: #5d697b;
-      --border-color: #cbd5e0;
-      --hover-bg: #e6f2ff;
-      --shadow: rgba(45, 55, 72, 0.1);
+      --bg-primary: #1a202c;
+      --bg-secondary: #2d3748;
+      --bg-card: #222937;
+
+      --text-primary: #e2e8f0;
+      --text-secondary: #a0aec0;
+      --text-muted: #718096;
+
+      --primary-color: #63b3ed;
+      --primary-light: #2c5282;
+      --primary-dark: #90cdf4;    
+
+      --accent-color: #fbd38d;
+      --border-color: #3e4a5e;
+      --hover-bg: #2d3748;
+      --shadow: rgba(0, 0, 0, 0.4);
     }
 
     body {
@@ -78,7 +80,7 @@
       border-bottom: 1px solid var(--border-color);
     }
     td:nth-child(2) {
-      color: chocolate;
+      color: var(--accent-color);
       font-weight: 700;
     }
 
@@ -92,11 +94,11 @@
       margin-right: 10px;
     }
     .search-container input {
-      width: 300px;
-      padding: 8px 12px;
+      width: 400px;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
       border: 1px solid var(--border-color);
       border-radius: 4px;
-      font-size: 1em;
     }
     .search-container span {
       margin-left: 20px;
