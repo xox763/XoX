@@ -38,20 +38,25 @@
       margin-bottom: 40px;
     }
 
-    .page-header__title {
-      font-size: 36px;
-      font-weight: 300;
-      letter-spacing: .25px;
-      line-height: 1.25;
-      overflow-wrap: break-word;
+    header h1 {
+      color: var(--primary-color);
+      font-size: 2.5em;
+      margin: 0 0 10px 0;
+      font-weight: 700;
     }
   </style>
 </head>
 
 <body>
-  <h1 class="page-header__title">Strongford Quiz</h1>
-  <label for="keywords">Search:</label>
-  <input type="text" id="keywords">
+  <header>
+    <h1>Strongford Quiz</h1>
+  </header>
+
+  <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+    <label for="keywords">Search:</label>
+    <input type="text" id="keywords">
+  </div>
+
   <table class="sortable wikitable jquery-tablesorter">
   <thead><tr>
   <th class="headerSort" tabindex="0" role="columnheader button" title="Sort ascending"><b>Question</b>
