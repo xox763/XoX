@@ -71,9 +71,9 @@
     }
 
     .guidelines {
+      padding: 20px;
       background-color: var(--bg-card);
       /* background-color: var(--bg-secondary); */
-      padding: 20px;
       border-left: 4px solid var(--accent-color);
       border-radius: 10px;
       margin: 20px 20px 20px 20px;
@@ -272,17 +272,34 @@
       </div>
     </details>
     
-    <details class="report-accordion" open>
+    <details class="report-accordion">
       <summary>Weekly Activity Reports</summary>
       <div class="wa-reports">
         <ul class="reports-list" id="waReportsList"></ul>
       </div>
     </details>
     
-    <details class="report-accordion" open>
+    <details class="report-accordion">
       <summary>Area of Conquest Activity Reports</summary>
       <div class="aoc-reports">
         <ul class="reports-list" id="aocReportsList"></ul>
+      </div>
+    </details>
+
+    <details class="report-accordion">
+      <summary>Helpers and Tools</summary>
+      <div class="helpers">
+        <ul id="helpers">
+          <li><a href="helpers/strongford-quiz.html">Strongford Quiz Answer Finder</a>
+            <div style="margin-top: 5px; color: var(--text-secondary); font-size: 0.9em;">
+              <p style="margin-bottom: 5px;">Strongford quiz lookup tool. Searchable database consolidated from the following sources:</p>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>- <a href="https://hero-wars.fandom.com/wiki/Special_Events/Strongford_Quiz" target="_blank" rel="noopener noreferrer">Hero Wars Wiki</a></li>
+                <li>- <a href="https://herowars-olympus.com/strongford-quiz/" target="_blank" rel="noopener noreferrer">Hero Wars Olympus</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </details>
 
