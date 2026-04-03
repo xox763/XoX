@@ -4,9 +4,9 @@
     "id": "guidelines",
     "folderPath": "guidelines",
     "files": [
-      "0. Welcome & Rules.html",
-      "1. AoC Event Policy.html",
-      "2. Raid & Arena Policy.html"
+      "3. AoC Event.html",
+      "1. Welcome & Rules.html",
+      "2. Raid & Arena.html"
     ],
     "sortBy": "name",
     "sortOrder": "asc"
