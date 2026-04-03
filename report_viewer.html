@@ -424,11 +424,15 @@
       if (params.isGeneric != null) {
         // If the report is generic (not from report list), disable the Display Auxiliary Data toggle and Search input
         if (params.isGeneric) {
-          document.querySelector('.control-group.report-only').classList.add('is-disabled');
+          document.querySelectorAll('.control-group.report-only').forEach(group => {
+            group.classList.add('is-disabled');
+          });
           evaluationToggle.disabled = true;
           searchFilter.disabled = true;
         } else {
-          document.querySelector('.control-group.report-only').classList.remove('is-disabled');
+          document.querySelectorAll('.control-group.report-only').forEach(group => {
+            group.classList.remove('is-disabled');
+          });
           evaluationToggle.disabled = false;
           searchFilter.disabled = false;
         }
@@ -500,7 +504,7 @@
         .map(extractInfoFromName)
         .filter(item => item !== null);
       
-      // Sort by startDate, then by docType
+      // Sort by startDate, then by docType, then by filename (all nulls last)
       processedFiles.sort((a, b) => {
         const order = config.categorySortOrder === 'desc' ? -1 : 1;
         
@@ -518,7 +522,13 @@
         const bTypeNull = b.docType === null;
         if (aTypeNull !== bTypeNull) return aTypeNull ? 1 : -1;
         if (!aTypeNull) return a.docType.localeCompare(b.docType);
-        
+
+        // filename comparison
+        const aFilenameNull = a.filename === null;
+        const bFilenameNull = b.filename === null;
+        if (aFilenameNull !== bFilenameNull) return aFilenameNull ? 1 : -1;
+        if (!aFilenameNull) return a.filename.localeCompare(b.filename);
+
         return 0;
       });
 
