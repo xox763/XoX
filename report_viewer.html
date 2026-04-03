@@ -227,6 +227,12 @@
       border-top: 1px solid #455a64;
     }
 
+    .is-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      filter: grayscale(100%);
+    }
+
     /* Viewer Container */
     .viewer-container {
       flex: 1;
@@ -280,18 +286,18 @@
 <body>
   <header>
     <h1 class="nav-title">
-      <a href="index.html" class="home-link">Home</a> 
+      <a href="index.html" class="home-link">Guild Home</a> 
       <span class="separator">&gt;</span> 
-      Report Viewer
+      Document Viewer
     </h1>
     <div class="controls">
       <div class="control-group">
-        <label for="reportSelector">Select Report:</label>
+        <label for="reportSelector">Select Document:</label>
         <select id="reportSelector">
         </select>
       </div>
 
-      <div class="control-group">
+      <div class="control-group report-only">
         <label for="evaluationToggle">Display Auxiliary Data:</label>
         <label class="toggle-switch">
           <input type="checkbox" id="evaluationToggle">
@@ -299,7 +305,7 @@
         </label>
       </div>
 
-      <div class="control-group">
+      <div class="control-group report-only">
         <label for="searchFilter">Search:</label>
         <input 
           type="text" 
@@ -414,6 +420,18 @@
       }
       if (params.searchKeyword != null) {
         searchFilter.value = params.searchKeyword;
+      }
+      if (params.isGeneric != null) {
+        // If the report is generic (not from report list), disable the Display Auxiliary Data toggle and Search input
+        if (params.isGeneric) {
+          document.querySelector('.control-group.report-only').classList.add('is-disabled');
+          evaluationToggle.disabled = true;
+          searchFilter.disabled = true;
+        } else {
+          document.querySelector('.control-group.report-only').classList.remove('is-disabled');
+          evaluationToggle.disabled = false;
+          searchFilter.disabled = false;
+        }
       }
     }
 

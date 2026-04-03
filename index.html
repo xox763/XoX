@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guild Activity Reports</title>
+  <title>XoX Guild Info</title>
   <style>
     :root {
       --primary-color: #2c5282;
@@ -260,14 +260,13 @@
 <body>
   <div class="container">
     <header>
-      <h1>Guild Activity Reports</h1>
-      <p>Performance and Contribution Archive</p>
+      <h1>XoX Guild Info</h1>
+      <p>Guidelines & Reports</p>
     </header>
     
     <details class="report-accordion" open>
-      <summary>Essential Information</summary>
+      <summary>Guidelines</summary>
       <div class="guidelines">
-        <p>Access the core documents and rules for the Guild here:</p>
         <ul id="guidelines"></ul>
       </div>
     </details>
@@ -399,8 +398,8 @@
     }
 
     // View report in iframe
-    function viewReport(category, pathname) {
-      const data = { category, pathname };
+    function viewReport(category, pathname, isGeneric = false) {
+      const data = { category, pathname, isGeneric };
       sessionStorage.setItem('viewer_params', JSON.stringify(data));
       window.location.href = `report_viewer.html?_t=${new Date().getTime()}`;
     }
@@ -450,12 +449,15 @@
             viewReport(category, pathname);
           });
         } else {
-          a.href = pathname;
-          // file name decoration for unknown types
-          // remove .html extension for cleaner display
-          // replace underscores with spaces
-          const displayName = fileObj.filename.replace(/\.html$/i, '').replace(/_/g, ' ');
-          a.textContent = displayName;
+          a.href = '#';
+          a.innerHTML = fileObj.filename.replace(/\.html$/i, '').replace(/_/g, ' ');
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            viewReport(category, pathname, true);
+          });
+
+          // a.href = pathname;
+          // a.textContent = fileObj.filename.replace(/\.html$/i, '').replace(/_/g, ' ');
         }
 
         li.appendChild(a);
