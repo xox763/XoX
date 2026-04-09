@@ -75,6 +75,14 @@
     tr:nth-child(even) {
       background-color: #f9f9f9;
     }
+    table#gag-stages th,
+    table#gag-stages td:nth-child(2) {
+      text-align: center;
+    }
+    table#gag-stages th:first-child,
+    table#gag-stages td:first-child {
+      width: 15%;
+    }
     .note {
       font-style: italic;
       color: #7f8c8d;
@@ -241,10 +249,10 @@
       <li>Any member who ignores communication or is reported for trolling two or more times during adventures may be expelled from the guild.</li>
     </ul>
     <h3>Guild Adventure Guide: Stages 9–13</h3>
-    <table>
+    <table id="gag-stages">
       <thead>
         <tr>
-          <th>Stage&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th style="width: 15%; text-align: center;">Stage</th>
           <th>Recommended Team Power</th>
           <th>Additional Notes</th>
         </tr>
