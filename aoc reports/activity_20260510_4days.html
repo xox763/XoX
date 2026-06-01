@@ -1,479 +1,374 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Area of Conquest May 2026 Activity Data</title>
 
     <style>
+      body {
+        font-family: Tahoma, Geneva, Verdana, sans-serif;
 
-        body {
+        margin: 20px;
 
-            font-family: Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f9;
 
-            margin: 20px;
+        color: #333;
+      }
 
-            background-color: #f4f4f9;
+      .container {
+        max-width: 600px;
 
-            color: #333;
+        margin: 0 auto;
 
-        }
+        background: #fff;
 
-        .container {
+        padding: 30px;
 
-            max-width: 600px;
+        border-radius: 8px;
 
-            margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-            background: #fff;
+      h1 {
+        color: #2c3e50;
 
-            padding: 30px;
+        border-bottom: 3px solid #f39c12;
 
-            border-radius: 8px;
+        padding-bottom: 10px;
 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 25px;
 
-        }
+        text-align: center;
+      }
 
-        h1 {
+      table {
+        width: 100%;
 
-            color: #2c3e50;
+        border-collapse: collapse;
 
-            border-bottom: 3px solid #f39c12;
+        margin-top: 20px;
 
-            padding-bottom: 10px;
+        font-size: 1em;
+      }
 
-            margin-bottom: 25px;
+      th,
+      td {
+        border: 1px solid #ddd;
 
-            text-align: center;
+        padding: 12px 15px;
 
-        }
+        text-align: left;
+      }
 
-        table {
+      th {
+        background-color: #34495e;
 
-            width: 100%;
+        color: white;
 
-            border-collapse: collapse;
+        font-weight: 600;
 
-            margin-top: 20px;
+        text-transform: uppercase;
+      }
 
-            font-size: 1em;
+      td:nth-child(1) {
+        text-align: center;
 
-        }
+        font-weight: bold;
 
-        th, td {
+        width: 10%;
+      }
 
-            border: 1px solid #ddd;
+      td:nth-child(3) {
+        text-align: right;
 
-            padding: 12px 15px;
+        font-weight: bold;
 
-            text-align: left;
+        color: #2980b9;
+      }
 
-        }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
 
-        th {
+      .rank-1,
+      .rank-2,
+      .rank-3 {
+        font-weight: bold;
+      }
 
-            background-color: #34495e;
+      .rank-1 td:nth-child(1) {
+        background-color: #ffd700;
+        color: #333;
+      }
 
-            color: white;
+      .rank-2 td:nth-child(1) {
+        background-color: #c0c0c0;
+        color: #333;
+      }
 
-            font-weight: 600;
+      .rank-3 td:nth-child(1) {
+        background-color: #cd7f32;
+        color: #333;
+      }
 
-            text-transform: uppercase;
+      .high-score td:nth-child(1) {
+        background-color: #9cd8ae;
+        color: #333;
+      }
 
-        }
+      .normal-score td:nth-child(1) {
+        background-color: #ecf0f1;
+        color: #333;
+      }
 
-        td:nth-child(1) {
+      .low-score td:nth-child(1) {
+        background-color: #eea69e;
+        color: #333;
+      }
 
-            text-align: center;
-
-            font-weight: bold;
-
-            width: 10%;
-
-        }
-
-        td:nth-child(3) {
-
-            text-align: right;
-
-            font-weight: bold;
-
-            color: #2980b9;
-
-        }
-
-        tr:nth-child(even) {
-
-            background-color: #f9f9f9;
-
-        }
-
-        .rank-1, .rank-2, .rank-3 { font-weight: bold; }
-
-        .rank-1 td:nth-child(1) { background-color: #ffd700; color: #333; }  
-
-        .rank-2 td:nth-child(1) { background-color: #c0c0c0; color: #333; }  
-
-        .rank-3 td:nth-child(1) { background-color: #cd7f32; color: #333; }  
-
-        .high-score td:nth-child(1) { background-color: #9cd8ae; color: #333; }  
-
-        .normal-score td:nth-child(1) { background-color: #ecf0f1; color: #333; }  
-
-        .low-score td:nth-child(1) { background-color: #eea69e; color: #333; }  
-
-        .zero-score td:nth-child(3) { color: #e74c3c; }
-
+      .zero-score td:nth-child(3) {
+        color: #e74c3c;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
-
-    
+  <body>
     <div class="container">
+      <h1>Area of Conquest May 2026 Activity Data</h1>
 
-        <h1>Area of Conquest May 2026 Activity Data</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
 
-        <table>
+            <th>Player</th>
 
-            <thead>
+            <th>Score</th>
+          </tr>
+        </thead>
 
-                <tr>
+        <tbody>
+          <tr class="rank-1">
+            <td>1</td>
 
-                    <th>Rank</th>
+            <td>Ihg</td>
 
-                    <th>Player</th>
+            <td>116,914</td>
+          </tr>
 
-                    <th>Score</th>
+          <tr class="rank-2">
+            <td>2</td>
 
-                </tr>
+            <td>Anophelus</td>
 
-            </thead>
+            <td>109,350</td>
+          </tr>
 
-            <tbody>
+          <tr class="rank-3">
+            <td>3</td>
 
-                
-                    <tr class="rank-1" >
+            <td>Ralfda1derLlama</td>
 
-                        <td>1</td>
+            <td>78,600</td>
+          </tr>
 
-                        <td>Anophelus</td>
+          <tr class="high-score">
+            <td>4</td>
 
-                        <td>63,774</td>
+            <td>lULU</td>
 
-                    </tr>
+            <td>49,695</td>
+          </tr>
 
-                
-                    <tr class="rank-2" >
+          <tr class="high-score">
+            <td>5</td>
 
-                        <td>2</td>
+            <td>Joe Black</td>
 
-                        <td>Ralfda1derLlama</td>
+            <td>44,139</td>
+          </tr>
 
-                        <td>54,900</td>
+          <tr class="high-score">
+            <td>6</td>
 
-                    </tr>
+            <td>Random</td>
 
-                
-                    <tr class="rank-3" >
+            <td>42,615</td>
+          </tr>
 
-                        <td>3</td>
+          <tr class="high-score">
+            <td>7</td>
 
-                        <td>Sam 81</td>
+            <td>Mar</td>
 
-                        <td>50,000</td>
+            <td>42,230</td>
+          </tr>
 
-                    </tr>
+          <tr class="high-score">
+            <td>8</td>
 
-                
-                    <tr class="high-score" >
+            <td>NauT</td>
 
-                        <td>4</td>
+            <td>35,200</td>
+          </tr>
 
-                        <td>lULU</td>
+          <tr class="high-score">
+            <td>9</td>
 
-                        <td>32,063</td>
+            <td>Kajrilisar</td>
 
-                    </tr>
+            <td>32,000</td>
+          </tr>
 
-                
-                    <tr class="high-score" >
+          <tr class="high-score">
+            <td>10</td>
 
-                        <td>5</td>
+            <td>Kolm</td>
 
-                        <td>Random</td>
+            <td>30,615</td>
+          </tr>
 
-                        <td>31,635</td>
+          <tr class="high-score">
+            <td>11</td>
 
-                    </tr>
+            <td>SodCheun</td>
 
-                
-                    <tr class="high-score" >
+            <td>27,667</td>
+          </tr>
 
-                        <td>6</td>
+          <tr class="high-score">
+            <td>12</td>
 
-                        <td>Vistro</td>
+            <td>Reikachan</td>
 
-                        <td>27,000</td>
+            <td>25,695</td>
+          </tr>
 
-                    </tr>
+          <tr class="high-score">
+            <td>13</td>
 
-                
-                    <tr class="high-score" >
+            <td>Vistro</td>
 
-                        <td>7</td>
+            <td>24,500</td>
+          </tr>
 
-                        <td>Mar</td>
+          <tr class="high-score">
+            <td>14</td>
 
-                        <td>26,189</td>
+            <td>mo-mo</td>
 
-                    </tr>
+            <td>23,307</td>
+          </tr>
 
-                
-                    <tr class="high-score" >
+          <tr class="high-score">
+            <td>15</td>
 
-                        <td>8</td>
+            <td>ondeonde</td>
 
-                        <td>Ihg</td>
+            <td>21,550</td>
+          </tr>
 
-                        <td>25,709</td>
+          <tr class="high-score">
+            <td>16</td>
 
-                    </tr>
+            <td>Valerix</td>
 
-                
-                    <tr class="high-score" >
+            <td>21,282</td>
+          </tr>
 
-                        <td>9</td>
+          <tr class="high-score">
+            <td>17</td>
 
-                        <td></td>
+            <td>Sam 81</td>
 
-                        <td>25,000</td>
+            <td>20,000</td>
+          </tr>
 
-                    </tr>
+          <tr class="high-score">
+            <td>18</td>
 
-                
-                    <tr class="high-score" >
+            <td>Dangan</td>
 
-                        <td>10</td>
+            <td>19,900</td>
+          </tr>
 
-                        <td>SodCheun</td>
+          <tr class="high-score">
+            <td>19</td>
 
-                        <td>21,577</td>
+            <td>Team 2PFF</td>
 
-                    </tr>
+            <td>16,282</td>
+          </tr>
 
-                
-                    <tr class="high-score" >
+          <tr class="high-score">
+            <td>20</td>
 
-                        <td>11</td>
+            <td>BOWMORE&#43;10</td>
 
-                        <td>Esi Gorg</td>
+            <td>15,000</td>
+          </tr>
 
-                        <td>20,985</td>
+          <tr class="normal-score">
+            <td>21</td>
 
-                    </tr>
+            <td>Numencito</td>
 
-                
-                    <tr class="high-score" >
+            <td>13,000</td>
+          </tr>
 
-                        <td>12</td>
+          <tr class="normal-score">
+            <td>22</td>
 
-                        <td>mo-mo</td>
+            <td>EmmiSant</td>
 
-                        <td>20,345</td>
+            <td>7,000</td>
+          </tr>
 
-                    </tr>
+          <tr class="low-score zero-score">
+            <td>23</td>
 
-                
-                    <tr class="high-score" >
+            <td>ZED</td>
 
-                        <td>13</td>
+            <td>0</td>
+          </tr>
 
-                        <td>Joe Black</td>
+          <tr class="low-score zero-score">
+            <td>23</td>
 
-                        <td>18,257</td>
+            <td>Flydman</td>
 
-                    </tr>
+            <td>0</td>
+          </tr>
 
-                
-                    <tr class="high-score" >
+          <tr class="low-score zero-score">
+            <td>23</td>
 
-                        <td>14</td>
+            <td>Pavel</td>
 
-                        <td>Kolm</td>
+            <td>0</td>
+          </tr>
 
-                        <td>16,770</td>
+          <tr class="low-score zero-score">
+            <td>23</td>
 
-                    </tr>
+            <td>Esi Gorg</td>
 
-                
-                    <tr class="high-score" >
+            <td>0</td>
+          </tr>
 
-                        <td>15</td>
+          <tr class="low-score zero-score">
+            <td>23</td>
 
-                        <td>NauT</td>
+            <td>Yorisar</td>
 
-                        <td>16,320</td>
-
-                    </tr>
-
-                
-                    <tr class="high-score" >
-
-                        <td>16</td>
-
-                        <td>BOWMORE&#43;10</td>
-
-                        <td>15,346</td>
-
-                    </tr>
-
-                
-                    <tr class="normal-score" >
-
-                        <td>17</td>
-
-                        <td>Team 2PFF</td>
-
-                        <td>14,883</td>
-
-                    </tr>
-
-                
-                    <tr class="normal-score" >
-
-                        <td>18</td>
-
-                        <td>Reikachan</td>
-
-                        <td>14,000</td>
-
-                    </tr>
-
-                
-                    <tr class="normal-score" >
-
-                        <td>18</td>
-
-                        <td>Dangan</td>
-
-                        <td>14,000</td>
-
-                    </tr>
-
-                
-                    <tr class="normal-score" >
-
-                        <td>20</td>
-
-                        <td>Valerix</td>
-
-                        <td>11,210</td>
-
-                    </tr>
-
-                
-                    <tr class="normal-score" >
-
-                        <td>21</td>
-
-                        <td>ondeonde</td>
-
-                        <td>10,000</td>
-
-                    </tr>
-
-                
-                    <tr class="normal-score" >
-
-                        <td>22</td>
-
-                        <td>Numencito</td>
-
-                        <td>6,000</td>
-
-                    </tr>
-
-                
-                    <tr class="normal-score" >
-
-                        <td>23</td>
-
-                        <td>Rogalao</td>
-
-                        <td>5,000</td>
-
-                    </tr>
-
-                
-                    <tr class="low-score" >
-
-                        <td>24</td>
-
-                        <td>EmmiSant</td>
-
-                        <td>3,000</td>
-
-                    </tr>
-
-                
-                    <tr class="low-score" >
-
-                        <td>25</td>
-
-                        <td>Flydman</td>
-
-                        <td>1,700</td>
-
-                    </tr>
-
-                
-                    <tr class="low-score zero-score" >
-
-                        <td>26</td>
-
-                        <td>ZED</td>
-
-                        <td>0</td>
-
-                    </tr>
-
-                
-                    <tr class="low-score zero-score" >
-
-                        <td>26</td>
-
-                        <td>Pavel </td>
-
-                        <td>0</td>
-
-                    </tr>
-
-                
-                    <tr class="low-score zero-score" >
-
-                        <td>26</td>
-
-                        <td>Yorisar</td>
-
-                        <td>0</td>
-
-                    </tr>
-
-                
-            </tbody>
-
-        </table>
-
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-</body>
-
+  </body>
 </html>
