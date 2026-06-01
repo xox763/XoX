@@ -102,5 +102,15 @@
     ],
     "sortBy": "date",
     "sortOrder": "desc"
+  },
+  "tot": {
+    "title": "Territory of Titans Activity Reports",
+    "id": "totReportsList",
+    "folderPath": "tot reports",
+    "files": [
+      "activity_20260525_4days.html"
+    ],
+    "sortBy": "date",
+    "sortOrder": "desc"
   }
 }
