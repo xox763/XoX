@@ -8,6 +8,7 @@ on:
       - 'guidelines/**/*.html'
       - 'weekly reports/**/*.html'
       - 'aoc reports/**/*.html'
+      - 'tot reports/**/*.html'
   workflow_dispatch:
 
 permissions:
@@ -37,16 +38,19 @@ jobs:
           GL_FILES=$(get_files "guidelines")
           WA_FILES=$(get_files "weekly reports")
           AOC_FILES=$(get_files "aoc reports")
+          TOT_FILES=$(get_files "tot reports")
 
           # Create final JSON using jq
           jq -n \
             --argjson gl "$GL_FILES" \
             --argjson wa "$WA_FILES" \
             --argjson aoc "$AOC_FILES" \
+            --argjson tot "$TOT_FILES" \
             '{
               gl: {title: "Essential Information", id: "guidelines", folderPath: "guidelines", files: $gl, sortBy: "name", sortOrder: "asc"},
               wa: {title: "Weekly Activity Reports", id: "waReportsList", folderPath: "weekly reports", files: $wa, sortBy: "date", sortOrder: "desc"},
               aoc: {title: "Area of Conquest Activity Reports", id: "aocReportsList", folderPath: "aoc reports", files: $aoc, sortBy: "date", sortOrder: "desc"}
+              tot: {title: "Territory of Titans Activity Reports", id: "totReportsList", folderPath: "tot reports", files: $tot, sortBy: "date", sortOrder: "desc"}
             }' > files.json
           
       - name: Commit changes
