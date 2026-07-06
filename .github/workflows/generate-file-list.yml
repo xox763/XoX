@@ -18,8 +18,22 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       
+      # Fix: Set up Node.js 24 environment to comply with the latest runtime specifications
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          
+      # Ensure jq tool is available in the runner environment
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      # Generate file list
       - name: Generate file list
         run: |
           # Function to find files safely and return a JSON array
