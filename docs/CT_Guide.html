@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guild Strategy Guide: Hero Battles via Combat Training (CT)</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --warning-color: #f59e0b;
+            --success-color: #10b981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #e2e8f0;
+            font-size: 1.3rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            background-color: rgba(56, 189, 248, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        ul, ol {
+            padding-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        code {
+            background-color: #0f172a;
+            color: var(--accent-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        .config-box {
+            background-color: #0f172a;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .config-box ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .config-box li {
+            padding: 0.25rem 0;
+            border-bottom: 1px dashed #1e293b;
+        }
+
+        .config-box li:last-child {
+            border-bottom: none;
+        }
+
+        .rate-badge {
+            display: inline-block;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .rate-low { background-color: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .rate-mid { background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        .rate-high { background-color: rgba(16, 185, 129, 0.2); color: #34d399; }
+
+        .pro-tip {
+            background-color: rgba(245, 158, 11, 0.1);
+            border: 1px solid var(--warning-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .pro-tip strong {
+            color: var(--warning-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Guild Strategy Guide: Mastering Hero Battles via Combat Training (CT)</h1>
+    
+    <div class="intro">
+        While Titan battles have straightforward counters and predictable stats, <strong>Hero battles carry far too many variables</strong>. Assigning targets based purely on a single visible defense team often leads to failed attacks and drops overall guild win rates.<br><br>
+        For <strong>GW (Guild War)</strong> and <strong>CoW (Clash of Worlds)</strong>, always test your Hero teams in <strong>Combat Training (CT)</strong> to ensure your counter strategy actually works.
+    </div>
+
+    <h2>1. Finding the Right Target</h2>
+    <ul>
+        <li><strong>Avoid Hard Counters:</strong> Skip targets with Hero compositions or individual units that your roster cannot reliably counter.</li>
+        <li><strong>Target Power Range:</strong> Look for targets within a reasonable power difference—ideally <code>-150K to +150K</code> of your team's power.</li>
+    </ul>
+
+    <h2>2. Setting Up Combat Training (CT)</h2>
+    <ul>
+        <li><strong>GW:</strong> No direct CT shortcut exists. You must manually recreate the defense setup in the CT menu.</li>
+        <li><strong>CoW:</strong> Use the <strong>CT shortcut button</strong> on the target card to pre-load basic target settings automatically.</li>
+    </ul>
+
+    <div class="config-box">
+        <strong>Required CT Configurations:</strong>
+        <ul>
+            <li><strong>Battle Mode:</strong> Match the active event (<code>GW</code> or <code>CoW</code>).</li>
+            <li><strong>Defense:</strong> Change from <code>Current</code> &rarr; <code>Maximum</code>.</li>
+            <li><strong>Attack:</strong> Leave at <code>Current</code> (Default).</li>
+            <li><strong>Select Buffs:</strong> 
+                <ul>
+                    <li>GW: Leave as <code>N/A</code>.</li>
+                    <li>CoW: Buffs apply automatically based on the target zone.</li>
+                </ul>
+            </li>
+            <li><strong>Patronage & Patterns:</strong> These do <em>not</em> auto-configure.
+                <ul>
+                    <li><strong>Patronage:</strong> Apply standard/commonly used Hero-Pet assignments.</li>
+                    <li><strong>Patterns (War Flags):</strong> Hover over the target's war flag prior to testing, then screenshot or memorize the stats to set them manually in CT.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h2>3. Testing & Calculating Win Rates</h2>
+    <ol>
+        <li>Start the CT battle and press <code>Esc</code> &rarr; <code>Skip Battle</code> to get instant results.</li>
+        <li>Click <code>Retry Battle</code> multiple times to calculate your average success rate:
+            <ul>
+                <li><span class="rate-badge rate-low">Under 60%</span> Unreliable / high risk.</li>
+                <li><span class="rate-badge rate-mid">60% – 79%</span> Minimum acceptable threshold.</li>
+                <li><span class="rate-badge rate-high">80%+</span> Safe to attack.</li>
+            </ul>
+        </li>
+        <li>If your win rate is low, click <code>Change attacker team</code> and test a different comp.</li>
+    </ol>
+
+    <div class="pro-tip">
+        <strong>Pro-Tip:</strong> Small adjustments matter! Fine-tuning your <strong>team pet</strong> and <strong>patronages</strong> can dramatically alter your win rate even with the same 5 heroes.
+    </div>
+
+    <h2>4. Testing Pure Matchups (Large Power Gaps)</h2>
+    <p>If there is a wide power gap between you and your target, use CT solely to test <strong>composition counters</strong> rather than raw stats. In these cases, set <code>Attack: Maximum</code> to evaluate how the matchup behaves on an equal playing field.</p>
+
+    <h2>5. [GIF Tutorial] Hero Wars CT Setup & Win Rate Test</h2>
+    <img src="ct_guide.gif"></img>
+</div>
+
+<footer>
+    <p>Hero Wars Strategy Guide &bull; Power Guild &bull; Created by Ihg</p>
+</footer>
+
+</body>
+</html>
